@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Wars</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="./img/blank-profile.png" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon"></i>
+            <i class="notifications-icon"></i>
+            <i class="messages-icon"></i>
+        </div>
+    </header>
+    <main>
+        <section class="your-games">
+            <h2>Tus partidas <span class="pending">(1 Pendiente)</span></h2>
+            <div class="game-list">
+                <div class="game-item">
+                    <img src="./img/blank-profile.png" alt="Player 1">
+                    <div class="game-info">
+                        <p>alexis_iglesias108</p>
+                        <p>Te invitó a una partida</p>
+                    </div>
+                    <button class="play-button">Jugar</button>
+                </div>
+                <div class="game-item">
+                    <img src="./img/blank-profile.png" alt="Player 2">
+                    <div class="game-info">
+                        <p>cgboutet.448</p>
+                        <p>#JugadorRápido ⚡</p>
+                    </div>
+                    <button class="create-game-button">Crear partida</button>
+                </div>
+                <div class="game-item">
+                    <img src="./img/blank-profile.png" alt="Player 3">
+                    <div class="game-info">
+                        <p>lucasortegaortegaluc.55</p>
+                        <p class="won-game">6-2 ¡Has ganado!</p>
+                    </div>
+                    <button class="rematch-button">Revancha</button>
+                </div>
+                <div class="game-item">
+                    <img src="./img/blank-profile.png" alt="Player 4">
+                    <div class="game-info">
+                        <p>lucasortegaortegaluc.55</p>
+                        <p>2-1</p>
+                    </div>
+                    <button class="play-button">Jugar</button>
+                </div>
+            </div>
+        </section>
+        <section class="opponent-turn">
+            <h2>Turno del oponente</h2>
+            <div class="game-item">
+                <img src="./img/blank-profile.png" alt="Player 5">
+                <div class="game-info">
+                    <p>lucasortegaortegaluc.55</p>
+                    <p>5-2</p>
+                </div>
+                <p>No tienes más partidas en espera</p>
+            </div>
+        </section>
+    </main>
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')"><h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')"><h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('play')"><h5>PLAY</h5></i>
+        <i class="video-icon" onclick="navigateTo('video')"><h5>VIDEO</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')"><h5>STORE</h5></i>
+    </nav>
+    <script src="./script.js"></script>
+</body>
+</html>
