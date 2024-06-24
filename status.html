@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de la Partida</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="./img/blank-profile.png" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon"></i>
+            <i class="notifications-icon"></i>
+            <i class="messages-icon"></i>
+        </div>
+    </header>
+    <main>
+        <div class="game-status-container">
+            <div class="players-status" id="players-status">
+                <!-- Player status will be dynamically generated here -->
+            </div>
+            <div class="turns-bar" id="turns-bar">
+                <!-- Turns bar will be dynamically generated here -->
+            </div>
+            <button class="continue-btn" id="continue-btn">Empezar</button>
+        </div>
+    </main>
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')"></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')"></i>
+        <i class="play-icon" onclick="navigateTo('play')"></i>
+        <i class="video-icon" onclick="navigateTo('video')"></i>
+        <i class="store-icon" onclick="navigateTo('store')"></i>
+    </nav>
+    <script src="./status.js"></script>
+</body>
+</html>
