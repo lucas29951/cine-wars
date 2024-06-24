@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modos de Juego</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="./img/photo-profile-secondary.jpg" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="./img/V_Logotype_Navy.png" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon"></i>
+            <i class="notifications-icon"></i>
+            <i class="messages-icon"></i>
+        </div>
+    </header>
+    <main>
+        <section class="game-modes">
+            <h2>Modos de Juego</h2>
+            <div class="game-mode-list">
+                <div class="game-mode-item clasico" onclick="navigateTo('clasico')">
+                    <div class="game-mode-info">
+                        <p>Clásico</p>
+                    </div>
+                </div>
+                <div class="game-mode-item online" onclick="navigateTo('online')">
+                    <div class="game-mode-info">
+                        <p>Online</p>
+                    </div>
+                </div>
+                <div class="game-mode-item deathmatch" onclick="navigateTo('deathmatch')">
+                    <div class="game-mode-info">
+                        <p>Deathmatch</p>
+                    </div>
+                </div>
+                <div class="game-mode-item tematico" onclick="navigateTo('tematico')">
+                    <div class="game-mode-info">
+                        <p>Temático</p>
+                    </div>
+                </div>
+                <div class="game-mode-item personalizada" onclick="navigateTo('personalizada')">
+                    <div class="game-mode-info">
+                        <p>Personalizada</p>
+                    </div>
+                </div>
+                <div class="game-mode-item solitario" onclick="navigateTo('solitario')">
+                    <div class="game-mode-info">
+                        <p>Solitario</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')"><h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')"><h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('play')"><h5>PLAY</h5></i>
+        <i class="video-icon" onclick="navigateTo('video')"><h5>VIDEO</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')"><h5>STORE</h5></i>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
