@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Aquí puedes añadir los eventos y funcionalidades necesarias
     const playButtons = document.querySelectorAll('.play-button');
     const createGameButtons = document.querySelectorAll('.create-game-button');
     const rematchButtons = document.querySelectorAll('.rematch-button');
@@ -10,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('confirm-btn').addEventListener('click', confirmAnswer);
 
         const mode = localStorage.getItem('gameMode') || 'clasico';
+        const currentPlayer = localStorage.getItem('currentPlayer') || 'Jugador 1';
 
         obtenerConsigna("consignas");
-        initializeGame(mode);
+        initializeGame(mode, currentPlayer);
     }
 
     playButtons.forEach(button => {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function initializeGame(mode) {
+function initializeGame(mode, currentPlayer) {
     switch (mode) {
         case 'clasico':
             startClassicMode();
@@ -62,7 +62,7 @@ function initializeGame(mode) {
 
 function startClassicMode() {
     console.log('Iniciando modo Clásico');
-    startTimer(60); // Example: 60 seconds per round
+    startTimer(60);
 }
 
 function startOnlineMode() {
@@ -109,25 +109,21 @@ function startTimer(seconds) {
 
 function passQuestion() {
     alert('Pregunta pasada');
-    // Aquí puedes implementar la lógica para pasar la pregunta
 }
 
 function confirmAnswer() {
     alert('Respuesta confirmada');
-    // Aquí puedes implementar la lógica para confirmar la respuesta
 }
 
 function navigateTo(page) {
     switch (page) {
         case 'home':
-            //alert('Navegar a Home');
             window.location.href = './index.html';
             break;
         case 'calendar':
             alert('Navegar a Calendario');
             break;
         case 'play':
-            //alert('Navegar a Jugar');
             window.location.href = './game-modes.html';
             break;
         case 'video':
@@ -137,27 +133,21 @@ function navigateTo(page) {
             alert('Navegar a Tienda');
             break;
         case 'clasico':
-            // alert('Modo de Juego: Clásico');
             window.location.href = './game.html';
             break;
         case 'online':
-            // alert('Modo de Juego: Online');
             window.location.href = './game.html';
             break;
         case 'deathmatch':
-            // alert('Modo de Juego: Deathmatch');
             window.location.href = './game.html';
             break;
         case 'tematico':
-            // alert('Modo de Juego: Temático');
             window.location.href = './game.html';
             break;
         case 'personalizada':
-            // alert('Modo de Juego: Personalizada');
             window.location.href = './game.html';
             break;
         case 'solitario':
-            // alert('Modo de Juego: Solitario');
             window.location.href = './game.html';
             break;
         default:
