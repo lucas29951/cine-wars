@@ -1,0 +1,530 @@
+[
+    {
+        "id": 1,
+        "consigna": "Películas donde los animales hablen",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 2,
+        "consigna": "Películas con más de 3 secuelas",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 3,
+        "consigna": "Películas basadas en cómics",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 4,
+        "consigna": "Películas dirigidas por mujeres",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 5,
+        "consigna": "Películas que ganaron un Óscar a Mejor Película",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 6,
+        "consigna": "Películas que duren más de 3 horas",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 7,
+        "consigna": "Películas protagonizadas por Tom Hanks",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 8,
+        "consigna": "Películas de terror de los años 80",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 9,
+        "consigna": "Películas con robots o inteligencia artificial",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 10,
+        "consigna": "Películas que se desarrollen en el espacio",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 11,
+        "consigna": "Películas con banda sonora de Hans Zimmer",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 12,
+        "consigna": "Películas que sean remakes",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 13,
+        "consigna": "Películas que sucedan en una sola noche",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 14,
+        "consigna": "Películas basadas en hechos reales",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 15,
+        "consigna": "Películas ganadoras de la Palma de Oro en Cannes",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 16,
+        "consigna": "Películas de animación stop-motion",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 17,
+        "consigna": "Películas sobre viajes en el tiempo",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 18,
+        "consigna": "Películas filmadas en blanco y negro después del 2000",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 19,
+        "consigna": "Películas dirigidas por Quentin Tarantino",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 20,
+        "consigna": "Películas con un giro de trama inesperado",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 21,
+        "consigna": "Películas con más de una nominación al Óscar en 2020",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 22,
+        "consigna": "Películas basadas en novelas de Stephen King",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 23,
+        "consigna": "Películas con música de John Williams",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 24,
+        "consigna": "Películas de ciencia ficción de los años 90",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 25,
+        "consigna": "Películas con menos de 10 actores en el reparto",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 26,
+        "consigna": "Películas ganadoras de un Globo de Oro",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 27,
+        "consigna": "Películas donde el protagonista sea un villano",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 28,
+        "consigna": "Películas ambientadas en la Segunda Guerra Mundial",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 29,
+        "consigna": "Películas con una calificación de 8+ en IMDb",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 30,
+        "consigna": "Películas ganadoras del BAFTA a Mejor Película",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 31,
+        "consigna": "Películas con personajes que tengan superpoderes",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 32,
+        "consigna": "Películas filmadas en más de tres países",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 33,
+        "consigna": "Películas donde el título sea una sola palabra",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 34,
+        "consigna": "Películas con escenas post-créditos",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 35,
+        "consigna": "Películas ganadoras de un premio en Sundance",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 36,
+        "consigna": "Películas donde la trama gire en torno a un robo",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 37,
+        "consigna": "Películas sobre deportes",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 38,
+        "consigna": "Películas ambientadas en un futuro distópico",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 39,
+        "consigna": "Películas con un presupuesto de más de 200 millones de dólares",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 40,
+        "consigna": "Películas que se hayan estrenado en Navidad",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 41,
+        "consigna": "Películas con un protagonista infantil",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 42,
+        "consigna": "Películas con más de 2 horas y media de duración",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 43,
+        "consigna": "Películas animadas que no sean de Disney",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 44,
+        "consigna": "Películas filmadas en una sola toma continua",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 45,
+        "consigna": "Películas de ciencia ficción ambientadas en el espacio",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 46,
+        "consigna": "Películas animadas de Disney",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 47,
+        "consigna": "Películas basadas en libros",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 48,
+        "consigna": "Películas de superhéroes de Marvel",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 49,
+        "consigna": "Películas ganadoras del Oscar a la Mejor Película",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 50,
+        "consigna": "Películas de terror con clasificación R",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 51,
+        "consigna": "Películas de aventuras que involucren tesoros perdidos",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 52,
+        "consigna": "Películas románticas ambientadas en París",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 53,
+        "consigna": "Películas de comedia protagonizadas por Adam Sandler",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 54,
+        "consigna": "Películas de ciencia ficción distópicas",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 55,
+        "consigna": "Películas de animación japonesa (anime)",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 56,
+        "consigna": "Películas de misterio con giros inesperados",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 57,
+        "consigna": "Películas de guerra basadas en hechos reales",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 58,
+        "consigna": "Películas clásicas en blanco y negro",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 59,
+        "consigna": "Películas de aventuras con viajes en el tiempo",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 60,
+        "consigna": "Películas de deportes inspiradoras",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 61,
+        "consigna": "Películas de fantasía con mundos mágicos",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 62,
+        "consigna": "Películas de crímenes con detectives brillantes",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 63,
+        "consigna": "Películas de comedia romántica de los años 80",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 64,
+        "consigna": "Películas de animación de Pixar",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 65,
+        "consigna": "Películas basadas en hechos históricos",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 66,
+        "consigna": "Películas de suspenso con protagonistas femeninas",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 67,
+        "consigna": "Películas de ciencia ficción con inteligencia artificial",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 68,
+        "consigna": "Películas de guerra situadas en la Segunda Guerra Mundial",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 69,
+        "consigna": "Películas de terror psicológico",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 70,
+        "consigna": "Películas de acción con escenas espectaculares de persecución",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 71,
+        "consigna": "Películas de animales salvajes en su hábitat natural",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 72,
+        "consigna": "Películas de comedia de enredos familiares",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 73,
+        "consigna": "Películas de crimen organizado",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 74,
+        "consigna": "Películas de ciencia ficción cyberpunk",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 75,
+        "consigna": "Películas de drama que aborden temas sociales",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 76,
+        "consigna": "Películas de comedia negra",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 77,
+        "consigna": "Películas de fantasía épica",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 78,
+        "consigna": "Películas de misterio con tramas de conspiración",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 79,
+        "consigna": "Películas de acción con héroes retirados",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 80,
+        "consigna": "Películas de romance con protagonistas atípicos",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 81,
+        "consigna": "Películas de comedia con bromas clásicas",
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 82,
+        "consigna": "Películas de terror sobrenatural",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 83,
+        "consigna": "Películas de aventuras submarinas",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 84,
+        "consigna": "Películas de ciencia ficción con viajes intergalácticos",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 85,
+        "consigna": "Películas de misterio basadas en libros de detectives",
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 86,
+        "consigna": "Películas de guerra centradas en la Guerra Fría",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 87,
+        "consigna": "Películas de acción con secuencias de artes marciales",
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 88,
+        "consigna": "Películas de superhéroes de DC",
+        "dificultad": "fácil",
+        "puntos": 10
+    }
+]
