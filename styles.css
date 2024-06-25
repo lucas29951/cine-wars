@@ -20,13 +20,17 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid #ff4757;
+    /* border: 2px solid #ff4757; */
+    border: 2px solid #ffb142;
 }
 
 .logo img {
     width: 60px;
     height: 60px;
-    border: 2px solid #ff4757;
+    /* border: 2px solid #ff4757; */
+    border: 2px solid #ffb142;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .icons i {
@@ -318,4 +322,8 @@ main {
     font-size: 24px;
     color: white;
     cursor: pointer;
+}
+
+.bottom-nav i:hover h5:hover {
+    color: #14834b;
 }
