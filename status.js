@@ -12,7 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const continueBtn = document.getElementById('continue-btn');
     continueBtn.textContent = currentTurn === 1 ? 'Empezar' : 'Continuar';
-    continueBtn.addEventListener('click', startTurn);
+    
+    continueBtn.addEventListener('click', () => {
+        if (currentTurn >= totalTurns) {
+            startTurn(0);
+        } else {
+            startTurn(currentTurn);
+        }
+    });
 });
 
 function renderPlayersStatus(players) {
@@ -57,12 +64,8 @@ function renderTurnsBar(totalTurns, currentTurn) {
     }
 }
 
-function startTurn() {
-    let currentTurn = parseInt(localStorage.getItem('currentTurn')) || 1;
+function startTurn(currentTurn) {
     localStorage.setItem('currentTurn', currentTurn + 1);
     window.location.href = './game.html';
 }
 
-function navigateTo(page) {
-    // Lógica de navegación a diferentes páginas
-}
