@@ -133,7 +133,7 @@ function navigateTo(page) {
             alert('Navegar a Tienda');
             break;
         case 'clasico':
-            window.location.href = './game.html';
+            window.location.href = './status.html';
             break;
         case 'online':
             window.location.href = './game.html';
