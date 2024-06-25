@@ -20,6 +20,15 @@
             <i class="messages-icon"></i>
         </div>
     </header>
+
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')"><h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')"><h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('play')"><h5>PLAY</h5></i>
+        <i class="video-icon" onclick="navigateTo('video')"><h5>VIDEO</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')"><h5>STORE</h5></i>
+    </nav>
+    
     <main>
         <div class="game-status-container">
             <div class="players-status" id="players-status">
@@ -31,13 +40,7 @@
             <button class="continue-btn" id="continue-btn">Empezar</button>
         </div>
     </main>
-    <nav class="bottom-nav">
-        <i class="home-icon" onclick="navigateTo('home')"></i>
-        <i class="calendar-icon" onclick="navigateTo('calendar')"></i>
-        <i class="play-icon" onclick="navigateTo('play')"></i>
-        <i class="video-icon" onclick="navigateTo('video')"></i>
-        <i class="store-icon" onclick="navigateTo('store')"></i>
-    </nav>
+    
     <script src="./status.js"></script>
 </body>
 </html>
