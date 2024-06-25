@@ -58,7 +58,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     position: relative;
 }
 
@@ -68,6 +68,8 @@ main {
     background-color: #ff4757;
     border-radius: 10px;
     position: absolute;
+    border: 1px solid #333;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .time-countdown {
@@ -91,6 +93,9 @@ main {
     background-color: #f1f2f6;
     border-radius: 10px;
     width: 80%;
+    min-height: 90px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    border: 2px solid #242424;
 }
 
 .actions {
@@ -103,9 +108,12 @@ main {
     padding: 10px 20px;
     font-size: 18px;
     border: none;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #242424;
 }
 
 .pass-btn {
@@ -123,7 +131,7 @@ main {
 }
 
 .confirm-btn:hover {
-    background-color: #2fcb75;
+    background-color: #4df197;
 }
 
 .game-modes h2 {
@@ -145,7 +153,8 @@ main {
     cursor: pointer;
     transition: transform 0.2s;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .game-mode-list .game-mode-item:hover {
@@ -159,32 +168,38 @@ main {
 
 .clasico {
     background: linear-gradient(45deg, #ff6b81, #ff4757);
-    border: 2px solid #ff4757;
+    /* border: 2px solid #ff4757; */
+    border: 2px solid #252525;
 }
 
 .online {
     background: linear-gradient(45deg, #1e90ff, #3742fa);
-    border: 2px solid #3742fa;
+    /* border: 2px solid #3742fa; */
+    border: 2px solid #252525;
 }
 
 .deathmatch {
     background: linear-gradient(45deg, #2ed573, #26de81);
-    border: 2px solid #2ed573;
+    /* border: 2px solid #2ed573; */
+    border: 2px solid #252525;
 }
 
 .tematico {
     background: linear-gradient(45deg, #ffa502, #ff7f50);
-    border: 2px solid #ffa502;
+    /* border: 2px solid #ffa502; */
+    border: 2px solid #252525;
 }
 
 .personalizada {
     background: linear-gradient(45deg, #eccc68, #f39c12);
-    border: 2px solid #eccc68;
+    /* border: 2px solid #eccc68; */
+    border: 2px solid #252525;
 }
 
 .solitario {
     background: linear-gradient(45deg, #a4b0be, #747d8c);
-    border: 2px solid #a4b0be;
+    /* border: 2px solid #a4b0be; */
+    border: 2px solid #252525;
 }
 
 .your-games h2, .opponent-turn h2 {
@@ -208,8 +223,9 @@ main {
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ffa502;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    /* border: 2px solid #ffa502; */
+    border: 2px solid #363636;
 }
 
 .game-item img {
@@ -222,6 +238,7 @@ main {
 .game-info p {
     margin: 0;
     font-size: 16px;
+    /* font-weight: 600; */
 }
 
 .won-game {
@@ -237,6 +254,13 @@ main {
     border-radius: 20px;
     cursor: pointer;
     margin-left: auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #242424;
+    /* font-weight: 600; */
+}
+
+.play-button:hover, .create-game-button:hover, .rematch-button:hover {
+    background-color: #5b63fc;
 }
 
 .game-status-container {
@@ -249,13 +273,18 @@ main {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .player {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #585858;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
 }
 
 .player img {
@@ -279,14 +308,17 @@ main {
     display: flex;
     justify-content: space-around;
     width: 80%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .turn {
     flex: 1;
     height: 20px;
-    margin: 0 2px;
+    margin: 0 3px;
     background-color: #dcdde1;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .turn.active {
@@ -299,13 +331,16 @@ main {
     background-color: #2ed573;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #242424;
 }
 
-.confirm-btn:hover {
-    background-color: #2fcb75;
+.continue-btn:hover {
+    background-color: #11ad52;
 }
 
 .bottom-nav {
