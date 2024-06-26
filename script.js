@@ -95,7 +95,7 @@ function startTimer(seconds) {
     const timerInterval = setInterval(() => {
         timeLeft--;
         countdownElement.textContent = timeLeft + 's';
-        timeBarElement.style.width = (timeLeft / seconds * 100) + '%';
+        timeBarElement.style.width = (timeLeft / seconds * 80) + '%';
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert('Tiempo agotado');
