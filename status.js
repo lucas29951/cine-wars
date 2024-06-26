@@ -1,15 +1,6 @@
 
-const players = [
-        {name: "Jugador 1", profilePic: './img/blank-profile.png', points: 25},
-        {name: "Jugador 2", profilePic: './img/blank-profile.png', points: 10}
-];
-
 document.addEventListener('DOMContentLoaded', () => {
-    const players = JSON.parse(localStorage.getItem('players')) || 
-    [
-        {name: "Jugador 1", profilePic: './img/blank-profile.png', points: 25},
-        {name: "Jugador 2", profilePic: './img/blank-profile.png', points: 10}
-    ];
+    const players = JSON.parse(localStorage.getItem('players')) || [];
     const totalTurns = parseInt(localStorage.getItem('totalTurns')) || 6;
     const currentTurn = parseInt(localStorage.getItem('currentTurn')) || 1;
 
@@ -71,7 +62,6 @@ function renderTurnsBar(totalTurns, currentTurn) {
 }
 
 function startTurn(currentTurn) {
-    localStorage.setItem('currentPlayer', JSON.stringify(players));
     localStorage.setItem('currentTurn', currentTurn + 1);
     window.location.href = './game.html';
 }
