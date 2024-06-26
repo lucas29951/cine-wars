@@ -74,10 +74,15 @@ label {
 select, input[type="text"] {
     width: 100%;
     padding: 10px;
+    /* padding-left: 15px; */
     font-size: 16px;
     margin-bottom: 20px;
-    border: 1px solid #ced6e0;
-    border-radius: 5px;
+    /* border: 1px solid #ced6e0; */
+    border: 2px solid #333;
+    /* border-radius: 5px; */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    outline-style: none;
 }
 
 .options {
@@ -93,22 +98,26 @@ select, input[type="text"] {
 }
 
 .player-names input[type="text"] {
+    width: calc(100% - 23px);
     margin-bottom: 10px;
 }
 
-button {
+#start-game-btn {
     padding: 10px 20px;
     font-size: 18px;
     background-color: #2ed573;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: 20px;
+    border: 1px solid #333;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-    background-color: #2fcb75;
+#start-game-btn:hover {
+    background-color: #68eca4;
 }
 
 .game-container {
@@ -321,7 +330,7 @@ button:hover {
     border-radius: 20px;
     cursor: pointer;
     margin-left: auto;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); */
     border: 1px solid #242424;
     /* font-weight: 600; */
 }
