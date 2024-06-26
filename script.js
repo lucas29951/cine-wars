@@ -5,11 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameContainer = document.querySelector('.game-container');
 
     if (gameContainer !== null) {
-        document.getElementById('pass-btn').addEventListener('click', passQuestion);
-        document.getElementById('confirm-btn').addEventListener('click', confirmAnswer);
-
         const mode = localStorage.getItem('gameMode') || 'clasico';
-        const currentPlayer = localStorage.getItem('currentPlayer') || 'Jugador 1';
 
         obtenerConsigna("consignas");
         initializeGame(mode);
@@ -103,16 +99,9 @@ function startTimer(seconds) {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert('Tiempo agotado');
+            window.location.href = "./status.html";
         }
     }, 1000);
-}
-
-function passQuestion() {
-    alert('Pregunta pasada');
-}
-
-function confirmAnswer() {
-    alert('Respuesta confirmada');
 }
 
 function navigateTo(page) {
