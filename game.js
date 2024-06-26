@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let players = JSON.parse(localStorage.getItem('players'));
+    let totalRounds = parseInt(localStorage.getItem('totalRounds'));
+    let currentTurn = parseInt(localStorage.getItem('currentTurn'));
+    let currentRound = parseInt(localStorage.getItem('currentRound'));
+    let currentPlayerIndex = (currentTurn - 1) % players.length;
+    let currentPlayer = players[currentPlayerIndex];
+
     const currentPlayerElement = document.getElementById('current-player');
     const questionElement = document.getElementById('question');
     const passBtn = document.getElementById('pass-btn');
     const confirmBtn = document.getElementById('confirm-btn');
 
-    let players = JSON.parse(localStorage.getItem('players'));
-    let totalTurns = parseInt(localStorage.getItem('totalTurns'));
-    let currentTurn = parseInt(localStorage.getItem('currentTurn'));
-    let currentRound = parseInt(localStorage.getItem('currentRound'));
-    let currentPlayerIndex = (currentRound - 1) % players.length;
-    let currentPlayer = players[currentPlayerIndex];
-
     function updateGameScreen() {
         currentPlayerElement.textContent = currentPlayer.name;
-        questionElement.textContent = 'Pregunta o Consigna para ' + currentPlayer.name;
+        // questionElement.textContent = 'Pregunta o Consigna para ' + currentPlayer.name;
     }
 
     passBtn.addEventListener('click', () => {
@@ -34,12 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         localStorage.setItem('currentTurn', currentTurn);
         localStorage.setItem('currentRound', currentRound);
+        localStorage.setItem('currentQuestion', questionElement.textContent);
 
-        if (currentRound > totalTurns) {
+        if (currentRound > totalRounds) {
             alert('Juego Terminado');
-            window.location.href = 'status.html'; // O redirigir a una página de resultados finales
+            window.location.href = './status.html'; // O redirigir a una página de resultados finales
         } else {
-            window.location.href = 'status.html';
+            if (currentTurn === 1) {
+                window.location.href = './status.html';
+            } else {
+                window.location.href = './game.html';
+            }
         }
     }
 
