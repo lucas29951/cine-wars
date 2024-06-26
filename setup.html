@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Partida</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="./img/blank-profile.png" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon">🔎</i>
+            <i class="notifications-icon">🔔</i>
+            <i class="messages-icon">✉️</i>
+        </div>
+    </header>
+
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')"><h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')"><h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('play')"><h5>PLAY</h5></i>
+        <i class="video-icon" onclick="navigateTo('video')"><h5>VIDEO</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')"><h5>STORE</h5></i>
+    </nav>
+    
+    <main>
+        <div class="setup-container">
+            <h1>Configuración de Partida</h1>
+            <form id="setup-form">
+                <label for="game-mode">Modo de Juego:</label>
+                <select id="game-mode" name="game-mode">
+                    <option value="classic">Clásico</option>
+                    <option value="online">Online</option>
+                    <option value="theme">Temático</option>
+                    <option value="deathmatch">Deathmatch</option>
+                    <option value="custom">Personalizado</option>
+                    <option value="solo">Solitario</option>
+                </select>
+
+                <div id="classic-options" class="options">
+                    <label for="classic-type">Tipo de Juego:</label>
+                    <select id="classic-type" name="classic-type">
+                        <option value="versus">Versus</option>
+                        <option value="teams">Equipos</option>
+                    </select>
+
+                    <div id="player-names" class="player-names">
+                        <!-- Player names will be dynamically generated here -->
+                    </div>
+                </div>
+
+                <button type="button" id="start-game-btn">Iniciar Partida</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="./setup.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
