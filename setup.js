@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         localStorage.setItem('players', JSON.stringify(playerNames));
-        localStorage.setItem('totalTurns', 6); // Por defecto 6 turnos
+        localStorage.setItem('totalRounds', 12);
         localStorage.setItem('currentTurn', 1);
         localStorage.setItem('currentRound', 1);
 
-        window.location.href = 'status.html';
+        window.location.href = './status.html';
     }
 });
