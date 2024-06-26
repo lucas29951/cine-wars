@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('confirm-btn').addEventListener('click', confirmAnswer);
 
         const mode = localStorage.getItem('gameMode') || 'clasico';
-        const currentPlayer = localStorage.getItem('currentPlayer') || 'Jugador 1';
+        // const currentPlayer = localStorage.getItem('currentPlayer') || 'Jugador 1';
+        const players = JSON.parse(localStorage.getItem('currentPlayer')) || 'Jugador 1';
 
         obtenerConsigna("consignas");
-        initializeGame(mode, currentPlayer);
+        initializeGame(mode, players);
     }
 
     playButtons.forEach(button => {
@@ -34,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function initializeGame(mode, currentPlayer) {
+function initializeGame(mode, players) {
     switch (mode) {
         case 'clasico':
-            startClassicMode();
+            startClassicMode(players);
             break;
         case 'online':
             startOnlineMode();
@@ -60,9 +61,15 @@ function initializeGame(mode, currentPlayer) {
     }
 }
 
-function startClassicMode() {
-    console.log('Iniciando modo Clásico');
-    startTimer(60);
+function startClassicMode(players) {
+    // console.log('Iniciando modo Clásico');
+    let currentPlayer = document.getElementById('current-player');
+    
+    players.forEach( player => {
+        currentPlayer.textContent = player.name;
+        console.log(player.name);
+        startTimer(60);
+    });
 }
 
 function startOnlineMode() {
@@ -133,7 +140,7 @@ function navigateTo(page) {
             alert('Navegar a Tienda');
             break;
         case 'clasico':
-            window.location.href = './status.html';
+            window.location.href = './setup.html';
             break;
         case 'online':
             window.location.href = './game.html';

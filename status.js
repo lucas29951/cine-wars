@@ -1,3 +1,9 @@
+
+const players = [
+        {name: "Jugador 1", profilePic: './img/blank-profile.png', points: 25},
+        {name: "Jugador 2", profilePic: './img/blank-profile.png', points: 10}
+];
+
 document.addEventListener('DOMContentLoaded', () => {
     const players = JSON.parse(localStorage.getItem('players')) || 
     [
@@ -65,6 +71,7 @@ function renderTurnsBar(totalTurns, currentTurn) {
 }
 
 function startTurn(currentTurn) {
+    localStorage.setItem('currentPlayer', JSON.stringify(players));
     localStorage.setItem('currentTurn', currentTurn + 1);
     window.location.href = './game.html';
 }
