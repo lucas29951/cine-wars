@@ -1,22 +1,34 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const players = JSON.parse(localStorage.getItem('players')) || [];
-    const totalTurns = parseInt(localStorage.getItem('totalTurns')) || 6;
+    const totalRounds = parseInt(localStorage.getItem('totalRounds')) || 12;
     const currentTurn = parseInt(localStorage.getItem('currentTurn')) || 1;
-
+    const currentRound = parseInt(localStorage.getItem('currentRound')) || 1;
+    
+    if (currentRound <= (totalRounds / 2)) {
     renderPlayersStatus(players);
-    renderTurnsBar(totalTurns, currentTurn);
+    renderTurnsBar(totalRounds, currentRound);
 
     const continueBtn = document.getElementById('continue-btn');
-    continueBtn.textContent = currentTurn === 1 ? 'Empezar' : 'Continuar';
+    continueBtn.textContent = currentRound === 1 ? 'Empezar' : 'Continuar';
     
     continueBtn.addEventListener('click', () => {
-        if (currentTurn >= totalTurns) {
+        if (currentRound > (totalRounds / 2)) {
             startTurn(0);
         } else {
             startTurn(currentTurn);
         }
     });
+    } else {
+        const statusContainer = document.querySelector('.game-status-container');
+        statusContainer.innerHTML = "";
+        let titulo = document.createElement('div');
+        titulo.textContent = "FIN DEL JUEGO";
+        titulo.style.fontSize = "50px";
+        titulo.style.fontWeight = 900;
+        statusContainer.appendChild(titulo);
+        // alert('Juego Terminado!'); // Aqui podemos redirigir a una pagina donde se muestren los resultados
+    }
 });
 
 function renderPlayersStatus(players) {
@@ -47,14 +59,14 @@ function renderPlayersStatus(players) {
     });
 }
 
-function renderTurnsBar(totalTurns, currentTurn) {
+function renderTurnsBar(totalRounds, currentRound) {
     const turnsBar = document.getElementById('turns-bar');
     turnsBar.innerHTML = '';
 
-    for (let i = 1; i <= totalTurns; i++) {
+    for (let i = 1; i <= (totalRounds / 2); i++) {
         const turnElement = document.createElement('div');
         turnElement.classList.add('turn');
-        if (i <= currentTurn) {
+        if (i <= currentRound) {
             turnElement.classList.add('active');
         }
         turnsBar.appendChild(turnElement);
@@ -62,7 +74,7 @@ function renderTurnsBar(totalTurns, currentTurn) {
 }
 
 function startTurn(currentTurn) {
-    localStorage.setItem('currentTurn', currentTurn + 1);
+    localStorage.setItem('currentTurn', currentTurn);
     window.location.href = './game.html';
 }
 
