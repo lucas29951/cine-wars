@@ -9,11 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('confirm-btn').addEventListener('click', confirmAnswer);
 
         const mode = localStorage.getItem('gameMode') || 'clasico';
-        // const currentPlayer = localStorage.getItem('currentPlayer') || 'Jugador 1';
-        const players = JSON.parse(localStorage.getItem('currentPlayer')) || 'Jugador 1';
+        const currentPlayer = localStorage.getItem('currentPlayer') || 'Jugador 1';
 
         obtenerConsigna("consignas");
-        initializeGame(mode, players);
+        initializeGame(mode);
     }
 
     playButtons.forEach(button => {
@@ -35,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function initializeGame(mode, players) {
+function initializeGame(mode) {
     switch (mode) {
         case 'clasico':
-            startClassicMode(players);
+            startClassicMode();
             break;
         case 'online':
             startOnlineMode();
@@ -61,15 +60,9 @@ function initializeGame(mode, players) {
     }
 }
 
-function startClassicMode(players) {
-    // console.log('Iniciando modo Clásico');
-    let currentPlayer = document.getElementById('current-player');
-    
-    players.forEach( player => {
-        currentPlayer.textContent = player.name;
-        console.log(player.name);
-        startTimer(60);
-    });
+function startClassicMode() {
+    console.log('Iniciando modo Clásico');
+    startTimer(60);
 }
 
 function startOnlineMode() {
