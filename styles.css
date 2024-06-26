@@ -40,10 +40,75 @@ header {
     font-size: 24px;
     color: #3742fa;
     cursor: pointer;
+    font-style: normal;
+}
+
+.icons i:hover {
+    filter: brightness(125%);
 }
 
 main {
     padding: 20px;
+}
+
+.setup-container {
+    background-color: #f1f2f6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #2f3542;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: #2f3542;
+    display: block;
+    margin-bottom: 10px;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ced6e0;
+    border-radius: 5px;
+}
+
+.options {
+    display: none;
+}
+
+.player-names {
+    margin-bottom: 20px;
+}
+
+.player-names label {
+    margin-bottom: 5px;
+}
+
+.player-names input[type="text"] {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #2ed573;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2fcb75;
 }
 
 .game-container {
@@ -211,8 +276,8 @@ main {
 .pending {
     background-color: #ff4757;
     color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
+    padding: 3px 7px;
+    border-radius: 5px;
     font-size: 16px;
 }
 
@@ -233,6 +298,8 @@ main {
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); */
+    border: 2px solid #363636;
 }
 
 .game-info p {
@@ -292,6 +359,8 @@ main {
     height: 50px;
     border-radius: 50%;
     margin-bottom: 5px;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); */
+    border: 2px solid #363636;
 }
 
 .player-name {
