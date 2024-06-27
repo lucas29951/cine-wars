@@ -9,7 +9,7 @@ async function getApiData(url) {
 async function obtenerConsigna(search) {
     const result = await getApiData(api[search]);
     const orden = aleatorio(1, result.length);
-    // createCards(result, search);
+    localStorage.setItem('currentQuestion', JSON.stringify(result[orden - 1]));
     cargarConsigna(result[orden - 1]);
 }
 
