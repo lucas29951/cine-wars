@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentRound = parseInt(localStorage.getItem('currentRound')) || 1;
     
     if (currentRound <= (totalRounds / 2)) {
+    obtenerConsigna("consignas");
+    
     renderPlayersStatus(players);
     renderTurnsBar(totalRounds, currentRound);
 
@@ -27,6 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         titulo.style.fontSize = "50px";
         titulo.style.fontWeight = 900;
         statusContainer.appendChild(titulo);
+        let ganador = document.createElement('div')
+        ganador.style.fontSize = "30px";
+        ganador.style.fontWeight = 700;
+        ganador.textContent = players[0].points > players[1].points ? 'Ganador: ' + players[0].name : 'Ganador: ' + players[1].name;
+        statusContainer.appendChild(ganador);
         // alert('Juego Terminado!'); // Aqui podemos redirigir a una pagina donde se muestren los resultados
     }
 });
