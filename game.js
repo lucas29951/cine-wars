@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalRounds = parseInt(localStorage.getItem('totalRounds'));
     let currentTurn = parseInt(localStorage.getItem('currentTurn'));
     let currentRound = parseInt(localStorage.getItem('currentRound'));
+    let currentQuestion = JSON.parse(localStorage.getItem('currentQuestion'));
     let currentPlayerIndex = (currentTurn - 1) % players.length;
     let currentPlayer = players[currentPlayerIndex];
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateGameScreen() {
         currentPlayerElement.textContent = currentPlayer.name;
-        // questionElement.textContent = 'Pregunta o Consigna para ' + currentPlayer.name;
+        questionElement.textContent = currentQuestion.consigna;
     }
 
     passBtn.addEventListener('click', () => {
@@ -21,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     confirmBtn.addEventListener('click', () => {
-        currentPlayer.points += 10; // Supongamos que cada respuesta correcta suma 10 puntos
+        currentPlayer.points += currentQuestion.puntos;
+        // currentPlayer.points += 10; // Supongamos que cada respuesta correcta suma 10 puntos
         localStorage.setItem('players', JSON.stringify(players));
         nextTurn();
     });
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         localStorage.setItem('currentTurn', currentTurn);
         localStorage.setItem('currentRound', currentRound);
-        localStorage.setItem('currentQuestion', questionElement.textContent);
+        // localStorage.setItem('currentQuestion', questionElement.textContent);
 
         if (currentRound > totalRounds) {
             alert('Juego Terminado');
