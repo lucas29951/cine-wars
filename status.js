@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    const partidas = JSON.parse(localStorage.getItem('partidas')) || [];
+    const selectedMode = localStorage.getItem('selectedMode');
     const players = JSON.parse(localStorage.getItem('players')) || [];
     const totalRounds = parseInt(localStorage.getItem('totalRounds')) || 12;
     const currentTurn = parseInt(localStorage.getItem('currentTurn')) || 1;
@@ -34,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ganador.style.fontWeight = 700;
         ganador.textContent = players[0].points > players[1].points ? 'Ganador: ' + players[0].name : 'Ganador: ' + players[1].name;
         statusContainer.appendChild(ganador);
+
+        partidas.push({ jugadores: players, modo: selectedMode });
+        //playerNames.push({ name: input.value.trim(), points: 0 });
+        localStorage.setItem('partidas', JSON.stringify(partidas));
         // alert('Juego Terminado!'); // Aqui podemos redirigir a una pagina donde se muestren los resultados
     }
 });
