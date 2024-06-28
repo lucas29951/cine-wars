@@ -12,44 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const passBtn = document.getElementById('pass-btn');
     const confirmBtn = document.getElementById('confirm-btn');
 
-    function updateGameScreen() {
-        currentPlayerElement.textContent = currentPlayer.name;
-        questionElement.textContent = currentQuestion.consigna;
-    }
 
     passBtn.addEventListener('click', () => {
-        nextTurn();
+        nextTurn(currentTurn, players, currentRound, totalRounds);
     });
 
     confirmBtn.addEventListener('click', () => {
         currentPlayer.points += currentQuestion.puntos;
         // currentPlayer.points += 10; // Supongamos que cada respuesta correcta suma 10 puntos
         localStorage.setItem('players', JSON.stringify(players));
-        nextTurn();
+        nextTurn(currentTurn, players, currentRound, totalRounds);
     });
 
-    function nextTurn() {
-        currentTurn++;
-        if (currentTurn > players.length) {
-            currentTurn = 1;
-            currentRound++;
-        }
-        localStorage.setItem('currentTurn', currentTurn);
-        localStorage.setItem('currentRound', currentRound);
-        // localStorage.setItem('currentQuestion', questionElement.textContent);
-
-        if (currentRound > totalRounds) {
-            alert('Juego Terminado');
-            window.location.href = './status.html'; // O redirigir a una página de resultados finales
-        } else {
-            if (currentTurn === 1) {
-                window.location.href = './status.html';
-            } else {
-                window.location.href = './game.html';
-            }
-        }
-    }
-
-    updateGameScreen();
+    updateGameScreen(currentPlayerElement, currentPlayer, questionElement, currentQuestion);
     startTimer(60);
 });
