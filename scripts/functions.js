@@ -64,22 +64,28 @@ function navigateTo(page) {
             alert('Navegar a Tienda');
             break;
         case 'clasico':
+            localStorage.setItem('selectedMode', "classic");
             window.location.href = './setup.html';
             break;
         case 'online':
-            window.location.href = './game.html';
+            localStorage.setItem('selectedMode', "online");
+            window.location.href = './setup.html';
             break;
         case 'deathmatch':
-            window.location.href = './game.html';
+            localStorage.setItem('selectedMode', "deathmatch");
+            window.location.href = './setup.html';
             break;
         case 'tematico':
-            window.location.href = './game.html';
+            localStorage.setItem('selectedMode', "theme");
+            window.location.href = './setup.html';
             break;
         case 'personalizada':
-            window.location.href = './game.html';
+            localStorage.setItem('selectedMode', "custom");
+            window.location.href = './setup.html';
             break;
         case 'solitario':
-            window.location.href = './game.html';
+            localStorage.setItem('selectedMode', "solo");
+            window.location.href = './setup.html';
             break;
         default:
             alert('Página no encontrada');
