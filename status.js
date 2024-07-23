@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         titulo.textContent = "FIN DEL JUEGO";
         titulo.style.fontSize = "50px";
         titulo.style.fontWeight = 900;
+        titulo.style.textAlign = 'center';
         statusContainer.appendChild(titulo);
         let ganador = document.createElement('div')
         ganador.style.fontSize = "30px";
