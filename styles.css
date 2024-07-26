@@ -451,3 +451,15 @@ select, input[type="text"] {
 .bottom-nav i:hover h5:hover {
     color: #14834b;
 }
+
+@media (min-width: 300px) and (max-width: 480px){
+    .bottom-nav i h5 {
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width:767px) {
+    .bottom-nav i h5 {
+        display: none;
+    }
+}
