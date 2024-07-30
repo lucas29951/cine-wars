@@ -254,3 +254,23 @@ function nextTurn(currentTurn, players, currentRound, totalRounds) {
     }
 }
 
+function showPartidas(container) {
+    let partidas = localStorage.getItem('partidas');
+    
+    for (let i=1; i<partidas.length; i++) {
+    // partidas.forEach(partida => {
+        let item = document.createElement('div');
+        item.classList.add('game-item');
+
+        let image = document.createElement('img');
+        image.src = "https://api.dicebear.com/9.x/pixel-art/svg?seed=Karl&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf";
+        image.alt = 'Player N';
+        item.appendChild(image);
+
+        let info = document.createElement('div');
+        info.innerHTML = partidas[i].modo;
+
+        item.appendChild(info);
+        container.appendChild(item);
+    }//);
+}
