@@ -255,10 +255,10 @@ function nextTurn(currentTurn, players, currentRound, totalRounds) {
 }
 
 function showPartidas(container) {
-    let partidas = localStorage.getItem('partidas');
-    
-    for (let i=1; i<partidas.length; i++) {
-    // partidas.forEach(partida => {
+    let partidas = JSON.parse(localStorage.getItem('partidas'));
+
+    for (let i=0; i<partidas.length; i++) {
+
         let item = document.createElement('div');
         item.classList.add('game-item');
 
@@ -268,9 +268,23 @@ function showPartidas(container) {
         item.appendChild(image);
 
         let info = document.createElement('div');
-        info.innerHTML = partidas[i].modo;
+
+        let players = document.createElement('p');
+        players.textContent = partidas[i].jugadores[0].name + ' vs. ' + partidas[i].jugadores[1].name;
+
+        let scores = document.createElement('p');
+        scores.textContent = partidas[i].jugadores[0].points + ' - ' + partidas[i].jugadores[1].points;
+        
+        info.appendChild(players);
+        info.appendChild(scores);
 
         item.appendChild(info);
+
+        let btn = document.createElement('button');
+        btn.className = 'play-button';
+        btn.textContent = 'Jugar';
+
+        item.appendChild(btn);
         container.appendChild(item);
-    }//);
+    }
 }
