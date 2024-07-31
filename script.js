@@ -18,14 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     playButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            alert('Jugar');
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('Jugar');
+            window.location.href = './game-modes.html';
         });
     });
 
     createGameButtons.forEach(button => {
         button.addEventListener('click', () => {
-            alert('Crear partida');
+            window.location.href = './game-modes.html';
         });
     });
 
