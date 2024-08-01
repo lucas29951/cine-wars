@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     playButtons.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            console.log('Jugar');
             window.location.href = './game-modes.html';
         });
     });
