@@ -280,9 +280,11 @@ function showPartidas(container) {
 
         item.appendChild(info);
 
-        let btn = document.createElement('button');
+        let btn = document.createElement('a');
         btn.className = 'play-button';
+        btn.style.textDecoration = 'none';
         btn.textContent = 'Jugar';
+        btn.href = "./game-modes.html";
 
         item.appendChild(btn);
         container.appendChild(item);
