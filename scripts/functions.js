@@ -57,8 +57,8 @@ function navigateTo(page) {
         case 'play':
             window.location.href = './game-modes.html';
             break;
-        case 'video':
-            alert('Navegar a Video');
+        case 'ranking':
+            alert('Navegar a Ranking');
             break;
         case 'store':
             alert('Navegar a Tienda');
