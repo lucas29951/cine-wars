@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const rankingBody = document.getElementById('ranking-body');
+    const container = document.querySelector('.ranking-list');
     const partidas = JSON.parse(localStorage.getItem('partidas')) || [];
 
     const allPlayers = [];
@@ -18,42 +18,29 @@ document.addEventListener('DOMContentLoaded', () => {
     allPlayers.sort((a, b) => b.points - a.points);
 
     allPlayers.forEach((player, index) => {
-        const row = document.createElement('tr');
-        const positionCell = document.createElement('td');
-        const nameCell = document.createElement('td');
-        const pointsCell = document.createElement('td');
+        let item = document.createElement('div');
+        item.classList.add('ranking-item');
 
-        positionCell.textContent = index + 1;
-        nameCell.textContent = player.name;
-        pointsCell.textContent = player.points;
+        let image = document.createElement('img');
+        image.src = "https://api.dicebear.com/9.x/pixel-art/svg?seed=Karl&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf";
+        image.alt = `Player N${index + 1}`;
+        item.appendChild(image);
 
-        row.appendChild(positionCell);
-        row.appendChild(nameCell);
-        row.appendChild(pointsCell);
+        let info = document.createElement('div');
+        info.classList.add('ranking-info');
 
-        rankingBody.appendChild(row);
+        let nombre = document.createElement('div');
+        let puntaje = document.createElement('div');
+
+        nombre.textContent = player.name;
+        puntaje.textContent = player.points;
+        
+        info.appendChild(nombre);
+        info.appendChild(puntaje);
+
+        item.appendChild(info);
+
+        container.appendChild(item);
     });
 });
 
-function navigateTo(page) {
-    switch (page) {
-        case 'home':
-            window.location.href = './index.html';
-            break;
-        case 'calendar':
-            alert('Navegar a Calendario');
-            break;
-        case 'play':
-            window.location.href = './game-modes.html';
-            break;
-        case 'video':
-            alert('Navegar a Video');
-            break;
-        case 'store':
-            alert('Navegar a Tienda');
-            break;
-        default:
-            alert('Página no encontrada');
-            break;
-    }
-}
