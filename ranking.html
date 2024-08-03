@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Wars</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="https://api.dicebear.com/9.x/pixel-art/svg?backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="./img/copper-classic-logo.png" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon">🔎</i>
+            <i class="notifications-icon">🔔</i>
+            <i class="messages-icon">✉️</i>
+        </div>
+    </header>
+
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')">🏠 <h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')">📆 <h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('play')">▶️ <h5>PLAY</h5></i>
+        <i class="rank-icon" onclick="navigateTo('ranking')">📊 <h5>RANKING</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')">🛒 <h5>STORE</h5></i>
+    </nav>
+
+    <main>
+        <div class="ranking-container">
+            <h1>Ranking de Jugadores</h1>
+            <table id="ranking-table">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Nombre</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src="./ranking.js"></script>
+    <script src="./scripts/functions.js"></script>
+</body>
+</html>
