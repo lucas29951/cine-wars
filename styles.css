@@ -294,7 +294,7 @@ select, input[type="text"] {
     font-size: 16px;
 }
 
-.game-list .game-item, .opponent-turn .game-item {
+.game-list .game-item, .opponent-turn .game-item, .ranking-list .ranking-item {
     display: flex;
     align-items: center;
     background-color: white;
@@ -423,6 +423,43 @@ select, input[type="text"] {
 
 .continue-btn:hover {
     background-color: #11ad52;
+}
+
+.ranking-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.ranking-list .ranking-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    /* border: 2px solid #ffa502; */
+    border: 2px solid #363636;
+}
+
+.ranking-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); */
+    border: 2px solid #363636;
+}
+
+.ranking-info > *:last-child {
+    margin-left: 10px;
+}
+
+.ranking-info {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
 }
 
 .bottom-nav {
