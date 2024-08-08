@@ -497,8 +497,6 @@ select, input[type="text"] {
     }
 
     .bottom-nav i {
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-        border-radius: 15px;
         padding: 5px;
     }
 
@@ -515,8 +513,6 @@ select, input[type="text"] {
     }
 
     .bottom-nav i {
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-        border-radius: 15px;
         padding: 5px;
     }
 
