@@ -49,10 +49,10 @@ function createCards(results, search) {
 function navigateTo(page) {
     switch (page) {
         case 'home':
-            window.location.href = 'index.html';
+            window.location.href = 'views/main.html';
             break;
         case 'homevw':
-            window.location.href = '../index.html';
+            window.location.href = 'main.html';
             break;
         case 'calendar':
             alert('Navegar a Calendario');
