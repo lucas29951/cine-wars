@@ -8,7 +8,8 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: #ffda79;
@@ -16,6 +17,12 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* position: fixed; */
     /* top: 0; */
+}
+
+.main-title {
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
 }
 
 .profile-pic img {
