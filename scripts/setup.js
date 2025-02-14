@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupContainer.appendChild(titulo);
 
         let boton = document.createElement('a');
-        boton.href = "./index.html";
+        boton.href = "../index.html";
         boton.style.textAlign = 'center';
         boton.style.textDecoration = 'none';
         let textoBoton = document.createElement('h5');
@@ -200,6 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('currentTurn', 1);
         localStorage.setItem('currentRound', 1);
 
-        window.location.href = './status.html';
+        window.location.href = '../views/status.html';
     }
 });
