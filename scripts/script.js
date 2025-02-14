@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
     playButtons.forEach(button => {
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            window.location.href = './game-modes.html';
+            window.location.href = './views/game-modes.html';
         });
     });
 
     createGameButtons.forEach(button => {
         button.addEventListener('click', () => {
-            window.location.href = './game-modes.html';
+            window.location.href = './views/game-modes.html';
         });
     });
 
