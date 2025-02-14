@@ -61,7 +61,7 @@ function navigateTo(page) {
             window.location.href = 'views/game-modes.html';
             break;
         case 'playvw':
-            window.location.href = 'views/game-modes.html';
+            window.location.href = 'game-modes.html';
             break;
         case 'ranking':
             window.location.href = 'views/ranking.html';
@@ -179,7 +179,7 @@ function startTimer(seconds) {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert('Tiempo agotado');
-            window.location.href = "views/status.html";
+            window.location.href = "status.html";
         }
     }, 1000);
 }
@@ -295,7 +295,7 @@ function showPartidas(container) {
             btn.className = 'play-button';
             btn.style.textDecoration = 'none';
             btn.textContent = 'Jugar';
-            btn.href = "game-modes.html";
+            btn.href = "views/game-modes.html";
 
             item.appendChild(btn);
             container.appendChild(item);
