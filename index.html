@@ -22,16 +22,16 @@
         <h1 class="main-title"> 🍿🎞️ BLOCKBUSTER PARTY 📽️🎬</h1>
     </header>
 
-    <nav class="bottom-nav">
+    <!-- <nav class="bottom-nav">
         <i class="home-icon" onclick="navigateTo('home')">🏠 <h5>HOME</h5></i>
         <i class="calendar-icon" onclick="navigateTo('calendar')">📆 <h5>CALENDAR</h5></i>
         <i class="play-icon" onclick="navigateTo('play')">▶️ <h5>PLAY</h5></i>
         <i class="rank-icon" onclick="navigateTo('ranking')">📊 <h5>RANKING</h5></i>
         <i class="store-icon" onclick="navigateTo('store')">🛒 <h5>STORE</h5></i>
-    </nav>
+    </nav> -->
 
     <main>
-        <section class="your-games">
+        <!-- <section class="your-games">
             <h2>Tus partidas</h2>
             <div class="game-list">
                 <div class="game-item">
@@ -67,9 +67,9 @@
                     <button class="play-button">Jugar</button>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="opponent-turn">
+        <!-- <section class="opponent-turn">
             <h2>Turno del oponente <span class="pending">(1 Pendiente)</span></h2>
             <div class="game-item">
                 <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Tomas&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Player 5">
@@ -82,6 +82,41 @@
                 <div class="game-info">
                     <p>No tienes más partidas en espera</p>
                 </div>
+            </div>
+        </section> -->
+
+        <section class="game-modes">
+            <div class="game-mode-list">
+                <div class="game-mode-item online" onclick="navigateTo('home')">
+                    <div class="game-mode-info">
+                        <p>Iniciar</p>
+                    </div>
+                </div>
+                <div class="game-mode-item deathmatch" onclick="navigateTo('-')">
+                    <div class="game-mode-info">
+                        <p>Opciones</p>
+                    </div>
+                </div>
+                <div class="game-mode-item tematico" onclick="navigateTo('ranking')">
+                    <div class="game-mode-info">
+                        <p>Rankings</p>
+                    </div>
+                </div>
+                <div class="game-mode-item clasico" onclick="navigateTo('-')">
+                    <div class="game-mode-info">
+                        <p>Salir</p>
+                    </div>
+                </div>
+                <!-- <div class="game-mode-item personalizada" onclick="navigateTo('personalizada')">
+                    <div class="game-mode-info">
+                        <p>Personalizada</p>
+                    </div>
+                </div> -->
+                <!-- <div class="game-mode-item solitario" onclick="navigateTo('solitario')">
+                    <div class="game-mode-info">
+                        <p>Solitario</p>
+                    </div>
+                </div> -->
             </div>
         </section>
     </main>
