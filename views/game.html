@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Juego</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="https://api.dicebear.com/9.x/pixel-art/svg?backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="./img/copper-classic-logo.png" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon">🔎</i>
+            <i class="notifications-icon">🔔</i>
+            <i class="messages-icon">✉️</i>
+        </div>
+    </header>
+    
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('home')">🏠 <h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')">📆 <h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('play')">▶️ <h5>PLAY</h5></i>
+        <i class="rank-icon" onclick="navigateTo('ranking')">📊 <h5>RANKING</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')">🛒 <h5>STORE</h5></i>
+    </nav>
+
+    <main>
+        <div class="game-container">
+            <div class="timer">
+                <div class="time-bar" id="time-bar"></div>
+                <div class="time-countdown" id="time-countdown"></div>
+            </div>
+            <div class="current-player" id="current-player">Jugador Actual</div>
+            <div class="question" id="question">Pregunta o Consigna</div>
+            <div class="actions">
+                <button class="pass-btn" id="pass-btn">Pasar</button>
+                <button class="confirm-btn" id="confirm-btn">Confirmar</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="./game.js"></script>
+    <script src="./scripts/functions.js"></script>
+</body>
+</html>
