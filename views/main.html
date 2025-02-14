@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Wars</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <!-- <div class="profile-pic">
+            <img src="https://api.dicebear.com/9.x/pixel-art/svg?backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Profile Picture">
+        </div>
+        <div class="logo">
+            <img src="./img/copper-classic-logo.png" alt="Logo">
+        </div>
+        <div class="icons">
+            <i class="search-icon">🔎</i>
+            <i class="notifications-icon">🔔</i>
+            <i class="messages-icon">✉️</i>
+        </div> -->
+        <h1 class="main-title"> 🍿🎞️ BLOCKBUSTER PARTY 📽️🎬</h1>
+    </header>
+
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('homevw')">🏠 <h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')">📆 <h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('playvw')">▶️ <h5>PLAY</h5></i>
+        <i class="rank-icon" onclick="navigateTo('rankingvw')">📊 <h5>RANKING</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')">🛒 <h5>STORE</h5></i>
+    </nav>
+
+    <main>
+        <section class="your-games">
+            <h2>Tus partidas</h2>
+            <div class="game-list">
+                <div class="game-item">
+                    <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Karl&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Player 1">
+                    <div class="game-info">
+                        <p>alexis_iglesias108</p>
+                        <p>Te invitó a una partida</p>
+                    </div>
+                    <button class="play-button">Jugar</button>
+                </div>
+                <div class="game-item">
+                    <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Joan&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Player 2">
+                    <div class="game-info">
+                        <p>cgboutet.448</p>
+                        <p>#JugadorRápido⚡</p>
+                    </div>
+                    <button class="create-game-button">Crear partida</button>
+                </div>
+                <div class="game-item">
+                    <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Tomas&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Player 3">
+                    <div class="game-info">
+                        <p>lucasortega.55</p>
+                        <p class="won-game">6-2 ¡Has ganado!</p>
+                    </div>
+                    <button class="rematch-button">Revancha</button>
+                </div>
+                <div class="game-item">
+                    <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Tomas&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Player 4">
+                    <div class="game-info">
+                        <p>lucasortega.55</p>
+                        <p>2-1</p>
+                    </div>
+                    <button class="play-button">Jugar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="opponent-turn">
+            <h2>Turno del oponente <span class="pending">(1 Pendiente)</span></h2>
+            <div class="game-item">
+                <img src="https://api.dicebear.com/9.x/pixel-art/svg?seed=Tomas&backgroundType=gradientLinear&backgroundColor=c0aede,d1d4f9,b6e3f4,ffd5dc,ffdfbf" alt="Player 5">
+                <div class="game-info">
+                    <p>lucasortega.55</p>
+                    <p>5-2</p>
+                </div>
+            </div>
+            <div class="game-item">
+                <div class="game-info">
+                    <p>No tienes más partidas en espera</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/functions.js"></script>
+</body>
+</html>
