@@ -49,43 +49,43 @@ function createCards(results, search) {
 function navigateTo(page) {
     switch (page) {
         case 'home':
-            window.location.href = './index.html';
+            window.location.href = '../index.html';
             break;
         case 'calendar':
             alert('Navegar a Calendario');
             break;
         case 'play':
-            window.location.href = './views/game-modes.html';
+            window.location.href = '../views/game-modes.html';
             break;
         case 'ranking':
-            window.location.href = './views/ranking.html';
+            window.location.href = '../views/ranking.html';
             break;
         case 'store':
             alert('Navegar a Tienda');
             break;
         case 'clasico':
             localStorage.setItem('selectedMode', "classic");
-            window.location.href = './views/setup.html';
+            window.location.href = '../views/setup.html';
             break;
         case 'online':
             localStorage.setItem('selectedMode', "online");
-            window.location.href = './views/setup.html';
+            window.location.href = '../views/setup.html';
             break;
         case 'deathmatch':
             localStorage.setItem('selectedMode', "deathmatch");
-            window.location.href = './views/setup.html';
+            window.location.href = '../views/setup.html';
             break;
         case 'tematico':
             localStorage.setItem('selectedMode', "theme");
-            window.location.href = './views/setup.html';
+            window.location.href = '../views/setup.html';
             break;
         case 'personalizada':
             localStorage.setItem('selectedMode', "custom");
-            window.location.href = './views/setup.html';
+            window.location.href = '../views/setup.html';
             break;
         case 'solitario':
             localStorage.setItem('selectedMode', "solo");
-            window.location.href = './views/setup.html';
+            window.location.href = '../views/setup.html';
             break;
         default:
             alert('Página no encontrada');
@@ -170,7 +170,7 @@ function startTimer(seconds) {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             alert('Tiempo agotado');
-            window.location.href = "./views/status.html";
+            window.location.href = "../views/status.html";
         }
     }, 1000);
 }
@@ -222,7 +222,7 @@ function renderTurnsBar(totalRounds, currentRound) {
 
 function startTurn(currentTurn) {
     localStorage.setItem('currentTurn', currentTurn);
-    window.location.href = './views/game.html';
+    window.location.href = '../views/game.html';
 }
 
 
@@ -244,12 +244,12 @@ function nextTurn(currentTurn, players, currentRound, totalRounds) {
 
     if (currentRound > totalRounds) {
         alert('Juego Terminado');
-        window.location.href = './views/status.html'; // O redirigir a una página de resultados finales
+        window.location.href = '../views/status.html'; // O redirigir a una página de resultados finales
     } else {
         if (currentTurn === 1) {
-            window.location.href = './views/status.html';
+            window.location.href = '../views/status.html';
         } else {
-            window.location.href = './views/game.html';
+            window.location.href = '../views/game.html';
         }
     }
 }
@@ -284,7 +284,7 @@ function showPartidas(container) {
         btn.className = 'play-button';
         btn.style.textDecoration = 'none';
         btn.textContent = 'Jugar';
-        btn.href = "./views/game-modes.html";
+        btn.href = "../views/game-modes.html";
 
         item.appendChild(btn);
         container.appendChild(item);
