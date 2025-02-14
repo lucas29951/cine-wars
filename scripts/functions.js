@@ -49,6 +49,9 @@ function createCards(results, search) {
 function navigateTo(page) {
     switch (page) {
         case 'home':
+            window.location.href = 'index.html';
+            break;
+        case 'homevw':
             window.location.href = '../index.html';
             break;
         case 'calendar':
@@ -57,8 +60,14 @@ function navigateTo(page) {
         case 'play':
             window.location.href = 'views/game-modes.html';
             break;
+        case 'playvw':
+            window.location.href = 'views/game-modes.html';
+            break;
         case 'ranking':
             window.location.href = 'views/ranking.html';
+            break;
+        case 'rankingvw':
+            window.location.href = 'ranking.html';
             break;
         case 'store':
             alert('Navegar a Tienda');
