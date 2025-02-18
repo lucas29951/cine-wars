@@ -41,6 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
         partidas.push({ jugadores: players, modo: selectedMode });
         //playerNames.push({ name: input.value.trim(), points: 0 });
         localStorage.setItem('partidas', JSON.stringify(partidas));
-        // alert('Juego Terminado!'); // Aqui podemos redirigir a una pagina donde se muestren los resultados
     }
 });

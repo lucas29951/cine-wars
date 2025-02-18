@@ -17,26 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const classicOptions = document.getElementById('classic-options');
         const themeOptions = document.getElementById('theme-options');
 
-        // if (selectedMode === 'classic') {
-        //     classicOptions.style.display = 'block';
-        //     handleClassicTypeChange();
-        // } else {
-        //     classicOptions.style.display = 'none';
-        //     playerNamesContainer.innerHTML = '';
-        // }
-
         switch (selectedMode) {
             case "classic":
-                //console.log("Modo Clasico");
                 classicOptions.style.display = 'block';
                 handleClassicTypeChange();
                 break;
             case "online":
-                //console.log("Modo Online");
                 handleOnlineTypeChange();
                 break;
             case "theme":
-                //console.log("Modo Tematico");
                 themeOptions.style.display = 'block';
                 handleThemeTypeChange();
                 break;
@@ -50,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log("Modo Solitario");
                 break;
             default:
-                //console.log("No existe este modo elegido!");
                 classicOptions.style.display = 'none';
                 themeOptions.style.display = 'none';
                 playerNamesContainer.innerHTML = '';
@@ -200,6 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('currentTurn', 1);
         localStorage.setItem('currentRound', 1);
 
-        window.location.href = '../views/status.html';
+        window.location.href = 'status.html';
     }
 });

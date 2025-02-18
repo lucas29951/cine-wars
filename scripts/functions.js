@@ -26,26 +26,6 @@ function cargarConsigna(result) {
     question.textContent = `${result.consigna}`;
 }
 
-
-function createCards(results, search) {
-    const eventosContainer = document.querySelector(".events .row");
-    eventosContainer.innerHTML = "";
-    for (const result of results) {
-        eventosContainer.innerHTML += templates[search](result);
-    }
-    document.querySelectorAll(".comprar-btn").forEach(button => {
-        button.addEventListener("click", (event) => {
-            const evento = JSON.parse(button.getAttribute("data-evento"));
-            localStorage.setItem("eventoSeleccionado", JSON.stringify(evento));
-
-            if(event.target.classList.contains("link-card")){
-                localStorage.setItem("eventoSeleccionado", JSON.stringify(evento));
-            }
-        });
-    });
-}
-
-
 function navigateTo(page) {
     switch (page) {
         case 'home':
@@ -253,7 +233,7 @@ function nextTurn(currentTurn, players, currentRound, totalRounds) {
 
     if (currentRound > totalRounds) {
         alert('Juego Terminado');
-        window.location.href = 'status.html'; // O redirigir a una página de resultados finales
+        window.location.href = 'status.html';
     } else {
         if (currentTurn === 1) {
             window.location.href = 'status.html';
