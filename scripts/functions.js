@@ -49,6 +49,12 @@ function navigateTo(page) {
         case 'rankingvw':
             window.location.href = 'ranking.html';
             break;
+        case 'rules':
+            window.location.href = 'views/rules.html';
+            break;
+        case 'rulesvw':
+            window.location.href = 'rules.html';
+            break;
         case 'store':
             alert('Navegar a Tienda');
             break;
