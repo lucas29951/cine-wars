@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Wars</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="main-title"> 🍿🎞️ CINE WARS 📽️🎬</h1>
+    </header>
+
+    <nav class="bottom-nav">
+        <i class="home-icon" onclick="navigateTo('homevw')">🏠 <h5>HOME</h5></i>
+        <i class="calendar-icon" onclick="navigateTo('calendar')">📆 <h5>CALENDAR</h5></i>
+        <i class="play-icon" onclick="navigateTo('playvw')">▶️ <h5>PLAY</h5></i>
+        <i class="rank-icon" onclick="navigateTo('rankingvw')">📊 <h5>RANKING</h5></i>
+        <i class="store-icon" onclick="navigateTo('store')">🛒 <h5>STORE</h5></i>
+    </nav>
+
+    <main>
+        <div class="container-rules">
+            <h1>Instrucciones del Juego</h1>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header online">Modo Clásico</button>
+                    <div class="accordion-content">
+                        <p class="bolding">🎬 Modo Clásico - ¡Demuestra cuánto sabes de cine! 🎥🍿</p>  
+                        <p>En este modo de juego, los jugadores pondrán a prueba sus conocimientos sobre películas, directores, actores y momentos icónicos del cine. Se enfrentarán a una serie de preguntas de trivia 🎭 que abarcan desde los grandes clásicos hasta los éxitos más recientes de la pantalla grande.</p>
+                        
+                        <p class="bolding">📌 Reglas del Modo Clásico:</p>
+                        <ul>
+                            <li>Cada jugador responderá una pregunta en su turno. 📜</li>
+                            <li>Las preguntas pueden ser de opción múltiple, verdadero/falso o completar frases de películas famosas. ❓</li>
+                            <li>Si el jugador responde correctamente ✅, gana puntos y sigue participando.</li>
+                            <li>Si la respuesta es incorrecta ❌, pierde su turno y el siguiente jugador intentará responder.</li>
+                            <li>El juego puede tener un límite de tiempo por pregunta ⏳ o jugarse sin límite, según la configuración elegida.</li>    
+                        </ul>
+                        
+                        
+                        <p class="bolding">🏆 Objetivo:</p>
+                        <p>Acumular la mayor cantidad de puntos posibles al responder correctamente cada pregunta. ¡El jugador con más puntos al final será el ganador! 👑</p>
+                        
+                        <p class="bolding">🔥 Consejo:</p>
+                        <p>¡Presta atención a cada pregunta y confía en tu conocimiento cinematográfico! Algunas respuestas pueden ser más difíciles de lo que parecen. 😉🎞️ </p>                        
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header personalizada">Modo Rápido</button>
+                    <div class="accordion-content">
+                        <p>En este modo, los jugadores deben responder rápidamente antes de que el tiempo se acabe...</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header clasico">Modo Eliminación</button>
+                    <div class="accordion-content">
+                        <p class="bolding">🎬 Modo Eliminación - ¡Solo los verdaderos expertos sobrevivirán! 🎥🔥</p>
+                        <p>En este desafiante modo de juego, los jugadores competirán en una intensa batalla de conocimientos cinematográficos donde cada error los acercará a la eliminación. 😱 Cada ronda presentará una pregunta que pondrá a prueba su memoria y habilidades cinéfilas.</p>
+                        
+                        <p class="bolding">📌 Reglas del Modo Eliminación:</p>
+                        <ul>
+                            <li>Todos los jugadores comienzan con el mismo número de vidas ❤️❤️❤️.</li>
+                            <li>Se realizará una pregunta por turno, y cada jugador deberá responder en un tiempo determinado ⏳.</li>
+                            <li>Si la respuesta es correcta ✅, el jugador sigue en competencia.</li>
+                            <li>Si la respuesta es incorrecta ❌, el jugador perderá una vida.</li>
+                            <li>Cuando un jugador se queda sin vidas, queda eliminado del juego 💀.</li>
+                            <li>El juego continúa hasta que solo quede un jugador en pie.</li>
+                        </ul>
+                        
+                        <p class="bolding">🏆 Objetivo:</p>
+                        <p>Ser el último jugador en competencia, demostrando que eres el mejor en conocimientos de cine. ¡Sobrevive a la eliminación y reclama la victoria! 👑🏅</p>
+                        
+                        <p class="bolding">🔥 Consejo:</p>
+                        <p>¡Piensa rápido y con precisión! No hay segundas oportunidades en este modo. Cada respuesta puede ser la diferencia entre la gloria y la eliminación. 😈🎞️</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/functions.js"></script>
+</body>
+</html>
