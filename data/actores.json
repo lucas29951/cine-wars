@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "nombre": "Leonardo DiCaprio",
+        "año_nacimiento": 1974,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 2,
+        "nombre": "Robert De Niro",
+        "año_nacimiento": 1943,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 3,
+        "nombre": "Meryl Streep",
+        "año_nacimiento": 1949,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 4,
+        "nombre": "Tom Hanks",
+        "año_nacimiento": 1956,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 5,
+        "nombre": "Scarlett Johansson",
+        "año_nacimiento": 1984,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 6,
+        "nombre": "Al Pacino",
+        "año_nacimiento": 1940,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 7,
+        "nombre": "Natalie Portman",
+        "año_nacimiento": 1981,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 8,
+        "nombre": "Denzel Washington",
+        "año_nacimiento": 1954,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 9,
+        "nombre": "Morgan Freeman",
+        "año_nacimiento": 1937,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 10,
+        "nombre": "Brad Pitt",
+        "año_nacimiento": 1963,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 11,
+        "nombre": "Cate Blanchett",
+        "año_nacimiento": 1969,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 12,
+        "nombre": "Harrison Ford",
+        "año_nacimiento": 1942,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 13,
+        "nombre": "Jennifer Lawrence",
+        "año_nacimiento": 1990,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 14,
+        "nombre": "Christian Bale",
+        "año_nacimiento": 1974,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 15,
+        "nombre": "Johnny Depp",
+        "año_nacimiento": 1963,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 16,
+        "nombre": "Emma Stone",
+        "año_nacimiento": 1988,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 17,
+        "nombre": "Jack Nicholson",
+        "año_nacimiento": 1937,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 18,
+        "nombre": "Anne Hathaway",
+        "año_nacimiento": 1982,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 19,
+        "nombre": "Anthony Hopkins",
+        "año_nacimiento": 1937,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 20,
+        "nombre": "Keanu Reeves",
+        "año_nacimiento": 1964,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 21,
+        "nombre": "Jodie Foster",
+        "año_nacimiento": 1962,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 22,
+        "nombre": "Samuel L. Jackson",
+        "año_nacimiento": 1948,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 23,
+        "nombre": "Matt Damon",
+        "año_nacimiento": 1970,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 24,
+        "nombre": "Julia Roberts",
+        "año_nacimiento": 1967,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 25,
+        "nombre": "Nicole Kidman",
+        "año_nacimiento": 1967,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 26,
+        "nombre": "Will Smith",
+        "año_nacimiento": 1968,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 27,
+        "nombre": "Charlize Theron",
+        "año_nacimiento": 1975,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 28,
+        "nombre": "Russell Crowe",
+        "año_nacimiento": 1964,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 29,
+        "nombre": "Hugh Jackman",
+        "año_nacimiento": 1968,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 30,
+        "nombre": "Sandra Bullock",
+        "año_nacimiento": 1964,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 31,
+        "nombre": "Ryan Gosling",
+        "año_nacimiento": 1980,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 32,
+        "nombre": "Gal Gadot",
+        "año_nacimiento": 1985,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 33,
+        "nombre": "Robin Williams",
+        "año_nacimiento": 1951,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 34,
+        "nombre": "Chris Evans",
+        "año_nacimiento": 1981,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 35,
+        "nombre": "Chris Hemsworth",
+        "año_nacimiento": 1983,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 36,
+        "nombre": "Mark Ruffalo",
+        "año_nacimiento": 1967,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 37,
+        "nombre": "Jeremy Renner",
+        "año_nacimiento": 1971,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 38,
+        "nombre": "Paul Rudd",
+        "año_nacimiento": 1969,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 39,
+        "nombre": "Benedict Cumberbatch",
+        "año_nacimiento": 1976,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 40,
+        "nombre": "Tom Holland",
+        "año_nacimiento": 1996,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 41,
+        "nombre": "Zendaya",
+        "año_nacimiento": 1996,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 42,
+        "nombre": "Anne Bancroft",
+        "año_nacimiento": 1931,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 43,
+        "nombre": "Clint Eastwood",
+        "año_nacimiento": 1930,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 44,
+        "nombre": "Michael Caine",
+        "año_nacimiento": 1933,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 45,
+        "nombre": "Gene Hackman",
+        "año_nacimiento": 1930,
+        "dificultad": "difícil",
+        "puntos": 30
+    },
+    {
+        "id": 46,
+        "nombre": "Emma Watson",
+        "año_nacimiento": 1990,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 47,
+        "nombre": "Daniel Radcliffe",
+        "año_nacimiento": 1989,
+        "dificultad": "fácil",
+        "puntos": 10
+    },
+    {
+        "id": 48,
+        "nombre": "Rupert Grint",
+        "año_nacimiento": 1988,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 49,
+        "nombre": "Heath Ledger",
+        "año_nacimiento": 1979,
+        "dificultad": "media",
+        "puntos": 20
+    },
+    {
+        "id": 50,
+        "nombre": "Philip Seymour Hoffman",
+        "año_nacimiento": 1967,
+        "dificultad": "difícil",
+        "puntos": 30
+    }
+]
