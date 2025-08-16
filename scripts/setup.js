@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // const gameModeSelect = document.getElementById('game-mode');
+    const gameModeSelect = document.getElementById('game-mode');
     const classicTypeSelect = document.getElementById('classic-type');
     const themeTypeSelected = document.getElementById('theme-type');
     const playerNamesContainer = document.getElementById('player-names');
     const startGameBtn = document.getElementById('start-game-btn');
 
     handleGameModeChange();
-    // gameModeSelect.addEventListener('change', handleGameModeChange);
+    gameModeSelect.addEventListener('change', handleGameModeChange);
     classicTypeSelect.addEventListener('change', handleClassicTypeChange);
     themeTypeSelected.addEventListener('change', handleThemeTypeChange);
     startGameBtn.addEventListener('click', startGame);
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 classicOptions.style.display = 'block';
                 handleClassicTypeChange();
                 break;
-            case "online":
-                handleOnlineTypeChange();
+            case "rulete":
+                handleRuleteTypeChange();
                 break;
             case "theme":
                 themeOptions.style.display = 'block';
@@ -72,27 +72,57 @@ document.addEventListener('DOMContentLoaded', () => {
         playerNamesContainer.appendChild(input);
     }
 
-    function handleOnlineTypeChange() {
-        const setupContainer = document.querySelector(".setup-container");
-        setupContainer.innerHTML = '';
+    function handleRuleteTypeChange() {
+    const setupContainer = document.querySelector(".setup-container");
+    setupContainer.innerHTML = '';
 
-        let titulo = document.createElement('h1');
-        titulo.style.textAlign = 'center';
-        titulo.textContent = "Este modo de juego aun no esta disponible!";
+    let form = document.createElement('form');
+    form.id = 'setup-form';
 
-        setupContainer.appendChild(titulo);
+    // Título del modo
+    let titulo = document.createElement('h1');
+    titulo.style.textAlign = 'center';
+    titulo.textContent = "Modo Ruleta / Rosco 🎡";
+    form.appendChild(titulo);
 
-        let boton = document.createElement('a');
-        boton.href = "../index.html";
-        boton.style.textAlign = 'center';
-        boton.style.textDecoration = 'none';
-        let textoBoton = document.createElement('h5');
-        textoBoton.textContent = "HOME";
-        boton.appendChild(textoBoton);
+    // Explicación del modo
+    let descripcion = document.createElement('p');
+    descripcion.style.marginTop = '20px';
+    descripcion.style.textAlign = 'justify';
+    descripcion.style.fontSize = '18px';
+    descripcion.style.lineHeight = '1.6';
+    descripcion.innerHTML = `
+        En este modo de juego tendrás que poner a prueba tu rapidez mental y tu conocimiento 🎬. 
+        El juego se compone de dos ruletas interactivas: una con <b>letras</b> del abecedario 🔠 
+        y otra con <b>categorías</b> relacionadas al cine, series, actores y más 🎥. <br><br>
+        
+        🔹 Primero, la <b>ruleta de letras</b> girará mostrando una a una todas las letras. 
+        Cuando presiones el botón <i>Detener</i>, la ruleta se parará en una letra seleccionada.  
+        🔹 Luego, la <b>ruleta de categorías</b> girará mostrando distintos géneros y temáticas. 
+        Al detenerla, se elegirá una categoría. <br><br>
+        
+        Tu misión será <b>responder correctamente</b> una pregunta o dar un ejemplo que comience 
+        con la letra seleccionada y que además pertenezca a la categoría elegida ✅. <br><br>
+        
+        ⚡ ¡El reto está en ser rápido, ingenioso y creativo para sumar puntos!
+    `;
+    form.appendChild(descripcion);
 
-        setupContainer.appendChild(boton);
+    // Botón para continuar al modo de juego
+    let boton = document.createElement('button');
+    boton.type = 'button';
+    boton.id = 'start-game-btn';
+    boton.textContent = "Iniciar Partida";
+    boton.style.margin = '20px auto 40px';
 
-    }
+    form.appendChild(boton);
+
+    setupContainer.appendChild(form);
+
+    const btnStart = document.getElementById('start-game-btn');
+    btnStart.addEventListener('click', startGameRulete);
+}
+
 
     function handleThemeTypeChange() {
         const selectedType = themeTypeSelected.value;
@@ -168,7 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startGame() {
-        //const gameMode = gameModeSelect.value;
+        const gameMode = localStorage.getItem('selectedMode');
+        switch(gameMode) {
+            case 'classic':
+                startGameClassic();
+                break;
+            case 'rulete':
+
+                startGameRulete();
+                break;
+        }
+    }
+
+    function startGameClassic() {
         const playerNames = [];
 
         const inputs = playerNamesContainer.querySelectorAll('input');
@@ -189,5 +231,9 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('currentRound', 1);
 
         window.location.href = 'status.html';
+    }
+
+    function startGameRulete() {
+        window.location.href = 'game.html';
     }
 });
