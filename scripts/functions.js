@@ -62,8 +62,8 @@ function navigateTo(page) {
             localStorage.setItem('selectedMode', "classic");
             window.location.href = 'setup.html';
             break;
-        case 'online':
-            localStorage.setItem('selectedMode', "online");
+        case 'rulete':
+            localStorage.setItem('selectedMode', "rulete");
             window.location.href = 'setup.html';
             break;
         case 'deathmatch':
@@ -94,7 +94,7 @@ function initializeGame(mode) {
         case 'clasico':
             startClassicMode();
             break;
-        case 'online':
+        case 'rulete':
             startOnlineMode();
             break;
         case 'tematico':
