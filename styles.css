@@ -637,6 +637,63 @@ select, input[type="text"] {
     background-color: #ff6b81;
 }
 
+.players-count {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    outline-style: none;
+}
+
+.actors-display {
+    font-size: 2rem;
+    font-weight: bold;
+    background: #f5f5f5;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px 40px;
+    min-width: 500px;
+    min-height: 80px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-btn, .giveup-btn {
+    padding: 5px 15px;
+    font-size: 15px;
+    border: none;
+    /* border-radius: 10px; */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid #242424;
+}
+
+.change-btn {
+    background-color: #40a4dd;
+    color: #fff;
+}
+
+.giveup-btn {
+    background-color: #ff4757;
+    color: #fff;
+}
+
+.change-btn:hover {
+    background-color: #58b5eb;
+}
+
+.giveup-btn:hover {
+    background-color: #ff6b81;
+}
+
 @media (min-width: 300px) and (max-width: 480px){
     .bottom-nav {
         position: fixed;
