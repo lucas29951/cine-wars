@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 themeOptions.style.display = 'block';
                 handleThemeTypeChange();
                 break;
-            case "deathmatch":
-                console.log("Modo Deathmatch");
+            case "actors":
+                handleActorsTypeChange();
                 break;
             case "custom":
                 console.log("Modo Personalizado");
@@ -73,25 +73,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleRuleteTypeChange() {
-    const setupContainer = document.querySelector(".setup-container");
-    setupContainer.innerHTML = '';
+        const setupContainer = document.querySelector(".setup-container");
+        setupContainer.innerHTML = '';
 
-    let form = document.createElement('form');
-    form.id = 'setup-form';
+        let form = document.createElement('form');
+        form.id = 'setup-form';
 
-    // Título del modo
-    let titulo = document.createElement('h1');
-    titulo.style.textAlign = 'center';
-    titulo.textContent = "Modo Ruleta / Rosco 🎡";
-    form.appendChild(titulo);
+        let titulo = document.createElement('h1');
+        titulo.style.textAlign = 'center';
+        titulo.textContent = "Modo Ruleta / Rosco 🎡";
+        form.appendChild(titulo);
 
-    // Explicación del modo
-    let descripcion = document.createElement('p');
-    descripcion.style.marginTop = '20px';
-    descripcion.style.textAlign = 'justify';
-    descripcion.style.fontSize = '18px';
-    descripcion.style.lineHeight = '1.6';
-    descripcion.innerHTML = `
+        let descripcion = document.createElement('p');
+        descripcion.style.marginTop = '20px';
+        descripcion.style.textAlign = 'justify';
+        descripcion.style.fontSize = '18px';
+        descripcion.style.lineHeight = '1.6';
+        descripcion.innerHTML = `
         En este modo de juego tendrás que poner a prueba tu rapidez mental y tu conocimiento 🎬. 
         El juego se compone de dos ruletas interactivas: una con <b>letras</b> del abecedario 🔠 
         y otra con <b>categorías</b> relacionadas al cine, series, actores y más 🎥. <br><br>
@@ -106,29 +104,28 @@ document.addEventListener('DOMContentLoaded', () => {
         
         ⚡ ¡El reto está en ser rápido, ingenioso y creativo para sumar puntos!
     `;
-    form.appendChild(descripcion);
+        form.appendChild(descripcion);
 
-    // Botón para continuar al modo de juego
-    let boton = document.createElement('button');
-    boton.type = 'button';
-    boton.id = 'start-game-btn';
-    boton.textContent = "Iniciar Partida";
-    boton.style.margin = '20px auto 40px';
+        let boton = document.createElement('button');
+        boton.type = 'button';
+        boton.id = 'start-game-btn';
+        boton.textContent = "Iniciar Partida";
+        boton.style.margin = '20px auto 40px';
 
-    form.appendChild(boton);
+        form.appendChild(boton);
 
-    setupContainer.appendChild(form);
+        setupContainer.appendChild(form);
 
-    const btnStart = document.getElementById('start-game-btn');
-    btnStart.addEventListener('click', startGameRulete);
-}
+        const btnStart = document.getElementById('start-game-btn');
+        btnStart.addEventListener('click', startGameRulete);
+    }
 
 
     function handleThemeTypeChange() {
         const selectedType = themeTypeSelected.value;
         playerNamesContainer.innerHTML = '';
 
-        switch(selectedType) {
+        switch (selectedType) {
             case "accion":
                 alert("Accion");
                 break;
@@ -158,17 +155,106 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleDeathmatchTypeChange() {
-        const selectedType = classicTypeSelect.value;
-        playerNamesContainer.innerHTML = '';
+    function handleActorsTypeChange() {
+        const setupContainer = document.querySelector(".setup-container");
+        setupContainer.innerHTML = '';
 
-        if (selectedType === 'versus') {
-            addPlayerInput('Jugador 1');
-            addPlayerInput('Jugador 2');
-        } else if (selectedType === 'teams') {
-            addPlayerInput('Equipo 1');
-            addPlayerInput('Equipo 2');
-        }
+        let form = document.createElement('form');
+        form.id = 'setup-form';
+
+        let titulo = document.createElement('h1');
+        titulo.style.textAlign = 'center';
+        titulo.textContent = "Modo Cadena de Actores 🎭";
+        form.appendChild(titulo);
+
+        let labelCantidad = document.createElement('label');
+        labelCantidad.textContent = "Cantidad de jugadores:";
+        labelCantidad.style.display = "block";
+        labelCantidad.style.marginTop = "20px";
+
+        let inputCantidad = document.createElement('input');
+        inputCantidad.type = "number";
+        inputCantidad.min = "2";
+        inputCantidad.max = "10";
+        inputCantidad.placeholder = "Ej: 4";
+        inputCantidad.required = true;
+        inputCantidad.style.marginTop = "10px";
+        inputCantidad.style.display = "block";
+        inputCantidad.classList.add('players-count');
+
+        let btnConfirmar = document.createElement('button');
+        btnConfirmar.type = "button";
+        btnConfirmar.textContent = "Confirmar";
+        btnConfirmar.style.margin = "15px auto";
+        btnConfirmar.classList.add('confirm-btn');
+
+        form.appendChild(labelCantidad);
+        form.appendChild(inputCantidad);
+        form.appendChild(btnConfirmar);
+
+        let playersContainer = document.createElement('div');
+        playersContainer.id = "players-container";
+        playersContainer.style.marginTop = "20px";
+        form.appendChild(playersContainer);
+
+        setupContainer.appendChild(form);
+
+        btnConfirmar.addEventListener('click', () => {
+            playersContainer.innerHTML = '';
+
+            let cantidad = parseInt(inputCantidad.value);
+
+            if (isNaN(cantidad) || cantidad < 2 || cantidad > 10) {
+                alert("Por favor ingresa un número válido entre 2 y 10 jugadores.");
+                return;
+            }
+
+            for (let i = 1; i <= cantidad; i++) {
+                let label = document.createElement('label');
+                label.textContent = `Nombre del jugador ${i}:`;
+                label.style.display = "block";
+                label.style.marginTop = "10px";
+
+                let input = document.createElement('input');
+                input.type = "text";
+                input.placeholder = `Jugador ${i}`;
+                input.required = true;
+                input.classList.add("player-name");
+
+                playersContainer.appendChild(label);
+                playersContainer.appendChild(input);
+            }
+
+            let btnStart = document.createElement('button');
+            btnStart.type = "button";
+            btnStart.id = 'start-game-btn';
+            btnStart.textContent = "Iniciar Partida";
+            btnStart.style.marginTop = "20px";
+            btnStart.style.display = "block";
+
+            playersContainer.appendChild(btnStart);
+
+            btnStart.addEventListener('click', () => {
+                let inputs = document.querySelectorAll('.player-name');
+                let players = [];
+
+                inputs.forEach(input => {
+                    if (input.value.trim() !== "") {
+                        players.push(input.value.trim());
+                    }
+                });
+
+                if (players.length !== cantidad) {
+                    alert("Por favor completa todos los nombres de los jugadores.");
+                    return;
+                }
+
+                localStorage.setItem("players", JSON.stringify(players));
+
+                window.location.href = "game.html";
+            });
+        });
+
     }
 
     function handleCustomTypeChange() {
@@ -199,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startGame() {
         const gameMode = localStorage.getItem('selectedMode');
-        switch(gameMode) {
+        switch (gameMode) {
             case 'classic':
                 startGameClassic();
                 break;
@@ -235,5 +321,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startGameRulete() {
         window.location.href = 'game.html';
+    }
+
+    function startGameActors() {
+        window.location.href = 'status.html';
     }
 });
