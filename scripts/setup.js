@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 localStorage.setItem("players", JSON.stringify(players));
-
+                
                 window.location.href = "game.html";
             });
         });
@@ -290,7 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 startGameClassic();
                 break;
             case 'rulete':
-
                 startGameRulete();
                 break;
         }
