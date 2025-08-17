@@ -348,5 +348,166 @@
         "año_nacimiento": 1967,
         "dificultad": "difícil",
         "puntos": 30
-    }
+    },
+    {
+    "id": 51,
+    "nombre": "Margot Robbie",
+    "anioNacimiento": 1990,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 52,
+    "nombre": "Woody Harrelson",
+    "anioNacimiento": 1961,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 53,
+    "nombre": "Jesse Eisenberg",
+    "anioNacimiento": 1983,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 54,
+    "nombre": "Bruce Willis",
+    "anioNacimiento": 1955,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 55,
+    "nombre": "Adam Sandler",
+    "anioNacimiento": 1966,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 56,
+    "nombre": "Nicolas Cage",
+    "anioNacimiento": 1964,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 57,
+    "nombre": "JK Simmons",
+    "anioNacimiento": 1955,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 58,
+    "nombre": "Jim Carrey",
+    "anioNacimiento": 1962,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 59,
+    "nombre": "Viggo Mortensen",
+    "anioNacimiento": 1958,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 60,
+    "nombre": "Robert Pattinson",
+    "anioNacimiento": 1986,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 61,
+    "nombre": "Mark Wahlberg",
+    "anioNacimiento": 1971,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 62,
+    "nombre": "Pedro Pascal",
+    "anioNacimiento": 1975,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 63,
+    "nombre": "Ewan McGregor",
+    "anioNacimiento": 1971,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 64,
+    "nombre": "Rachel McAdams",
+    "anioNacimiento": 1978,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 65,
+    "nombre": "Amy Adams",
+    "anioNacimiento": 1974,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 66,
+    "nombre": "Laurence Fishburne",
+    "anioNacimiento": 1961,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 67,
+    "nombre": "Ben Affleck",
+    "anioNacimiento": 1972,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 68,
+    "nombre": "Jennifer Aniston",
+    "anioNacimiento": 1969,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 69,
+    "nombre": "Jennifer Connelly",
+    "anioNacimiento": 1970,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 70,
+    "nombre": "Liv Tyler",
+    "anioNacimiento": 1977,
+    "dificultad": "media",
+    "puntos": 20
+  },
+  {
+    "id": 71,
+    "nombre": "Cameron Diaz",
+    "anioNacimiento": 1972,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 72,
+    "nombre": "Drew Barrymore",
+    "anioNacimiento": 1975,
+    "dificultad": "fácil",
+    "puntos": 10
+  },
+  {
+    "id": 73,
+    "nombre": "Joaquin Phoenix",
+    "anioNacimiento": 1974,
+    "dificultad": "media",
+    "puntos": 20
+  }
 ]
