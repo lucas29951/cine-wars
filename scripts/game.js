@@ -149,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
         actorContainer.style.textAlign = 'center';
         actorContainer.style.marginTop = '20px';
 
+        obtenerActor("actores");
+        
         let actorName = document.createElement('div');
         let selectActor = JSON.parse(localStorage.getItem('currentActor'));
         actorName.classList.add('actors-display');
