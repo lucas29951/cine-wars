@@ -13,6 +13,13 @@ async function obtenerConsigna(search) {
 }
 
 
+async function obtenerActor(search) {
+    const result = await getApiData(api[search]);
+    const orden = aleatorio(1, result.length);
+    localStorage.setItem('currentActor', JSON.stringify(result[orden - 1]));
+}
+
+
 function aleatorio(inferior, superior) {
     var numPosibilidades = superior - inferior;
     var aleatorio = Math.random() * (numPosibilidades + 1);
@@ -66,8 +73,8 @@ function navigateTo(page) {
             localStorage.setItem('selectedMode', "rulete");
             window.location.href = 'setup.html';
             break;
-        case 'deathmatch':
-            localStorage.setItem('selectedMode', "deathmatch");
+        case 'actors':
+            localStorage.setItem('selectedMode', "actors");
             window.location.href = 'setup.html';
             break;
         case 'tematico':
@@ -100,7 +107,7 @@ function initializeGame(mode) {
         case 'tematico':
             startThematicMode();
             break;
-        case 'deathmatch':
+        case 'actors':
             startDeathmatchMode();
             break;
         case 'personalizada':
