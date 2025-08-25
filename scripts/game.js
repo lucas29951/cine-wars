@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadRuleteMode();
             break;
         case 'actors':
-            obtenerActor("actores")
+            obtenerActor("actores");
             loadActorsMode();
             break;
     }
