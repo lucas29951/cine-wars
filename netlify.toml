@@ -1,6 +1,6 @@
 [functions]
   directory = "netlify/functions"
-  node_bunndler = "esbuild"
+  node_bundler = "esbuild"
 
 [build]
   command = ""
