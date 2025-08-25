@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadActorsMode() {
         let selectActor = JSON.parse(localStorage.getItem('currentActor'));
-        if (!selectActor) {
+        if (selectActor) {
             location.reload();
         }
 
