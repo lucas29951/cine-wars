@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'actors':
             obtenerActor("actores");
-            location.reload();
             loadActorsMode();
             break;
     }
@@ -139,6 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadActorsMode() {
+        let selectActor = JSON.parse(localStorage.getItem('currentActor'));
+        if (!selectActor) {
+            location.reload();
+        }
+
         const gameContainer = document.querySelector(".game-container");
         gameContainer.innerHTML = '';
 
@@ -152,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actorContainer.style.marginTop = '20px';
         
         let actorName = document.createElement('div');
-        let selectActor = JSON.parse(localStorage.getItem('currentActor'));
         
         actorName.classList.add('actors-display');
         actorName.textContent = selectActor.nombre;
