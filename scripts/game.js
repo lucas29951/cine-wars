@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             break;
         case 'actors':
             obtenerActor("actores");
+            location.reload();
             loadActorsMode();
             break;
     }
