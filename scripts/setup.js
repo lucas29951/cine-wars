@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 localStorage.setItem("players", JSON.stringify(players));
-                
+                obtenerActor("actores");
                 window.location.href = "game.html";
             });
         });
