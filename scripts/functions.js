@@ -17,6 +17,7 @@ async function obtenerActor(search) {
     const result = await getApiData(api[search]);
     const orden = aleatorio(1, result.length);
     localStorage.setItem('currentActor', JSON.stringify(result[orden - 1]));
+    localStorage.setItem('estado', 'listo');
 }
 
 
