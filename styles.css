@@ -664,19 +664,18 @@ select, input[type="text"] {
     align-items: center;
 }
 
-.change-btn, .giveup-btn {
+/* .change-btn, .giveup-btn {
     padding: 5px 15px;
     font-size: 15px;
     border: none;
-    /* border-radius: 10px; */
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     border: 1px solid #242424;
-}
+} */
 
-.change-btn {
+/* .change-btn {
     background-color: #40a4dd;
     color: #fff;
 }
@@ -692,7 +691,69 @@ select, input[type="text"] {
 
 .giveup-btn:hover {
     background-color: #ff6b81;
+} */
+
+/* Caja del actor (similar a .question) */
+/* .actors-display {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 14px;
+    background-color: #f1f2f6;
+    border-radius: 10px;
+    min-height: 60px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    border: 2px solid #242424;
+} */
+
+/* Botón cambiar actor */
+.change-btn, .giveup-btn {
+    padding: 8px 14px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #242424;
+    cursor: pointer;
+    transition: filter .2s ease;
 }
+
+.change-btn {
+    background-color: #3742fa;
+    color: #fff;
+}
+
+.change-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.giveup-btn {
+    background-color: #ff4757;
+    color: #fff;
+    margin-top: 8px;
+}
+
+.change-btn:hover:not(:disabled),
+.giveup-btn:hover {
+    filter: brightness(110%);
+}
+
+/* Spinner */
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid #eaeaea;
+    border-top: 4px solid #3742fa;
+    border-radius: 50%;
+    margin: 6px auto;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 
 @media (min-width: 300px) and (max-width: 480px){
     .bottom-nav {
