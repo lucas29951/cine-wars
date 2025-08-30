@@ -251,14 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 localStorage.setItem("players", JSON.stringify(players));
 
-                obtenerActor("actores").then(actor => {
-                    localStorage.setItem("currentActor", JSON.stringify(actor));
-                    window.location.href = "game.html";
-                }).catch(err => {
-                    console.error("Error al obtener el actor: ", err);
-                });
+                localStorage.setItem('estado', 'pendiente');
+                obtenerActor("actores");
+                window.location.href = "game.html";
 
-                
             });
         });
 
