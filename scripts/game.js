@@ -136,96 +136,251 @@ document.addEventListener('DOMContentLoaded', () => {
         gameContainer.appendChild(ruleteContainer);
     }
 
+    // function loadActorsMode() {
+    //     let selectActor = '';
+    //     const interval = setInterval(() => {
+    //         const estado = localStorage.getItem("estado");
+    //         if (estado === "listo") {
+    //             selectActor = JSON.parse(localStorage.getItem("currentActor"));
+    //             clearInterval(interval);
+    //             initActorMode(selectActor);
+    //         }
+    //     }, 200);
+    // }
+
+    // function initActorMode(actor) {
+    //     const gameContainer = document.querySelector(".game-container");
+    //     gameContainer.innerHTML = '';
+
+    //     let titulo = document.createElement('h1');
+    //     titulo.style.textAlign = 'center';
+    //     titulo.textContent = "Modo Cadena de Actores 🎭";
+    //     gameContainer.appendChild(titulo);
+
+    //     let actorContainer = document.createElement('div');
+    //     actorContainer.style.textAlign = 'center';
+    //     actorContainer.style.marginTop = '20px';
+        
+    //     let actorName = document.createElement('div');
+    //     //let selectActor = JSON.parse(localStorage.getItem('currentActor'));
+        
+    //     actorName.classList.add('actors-display');
+    //     actorName.textContent = actor.nombre;
+    //     actorContainer.appendChild(actorName);
+
+    //     let btnChangeActor = document.createElement('button');
+    //     btnChangeActor.textContent = "🔄 Cambiar Actor";
+    //     btnChangeActor.style.marginTop = '10px';
+    //     btnChangeActor.classList.add('change-btn');
+    //     btnChangeActor.addEventListener('click', () => {
+    //         obtenerActor('actores');
+    //         selectActor = JSON.parse(localStorage.getItem('currentActor'));
+    //         actorName.textContent = selectActor.nombre;
+    //     });
+    //     actorContainer.appendChild(document.createElement('br'));
+    //     actorContainer.appendChild(btnChangeActor);
+
+    //     gameContainer.appendChild(actorContainer);
+
+    //     let subtitulo = document.createElement('h3');
+    //     subtitulo.textContent = "Jugadores en la ronda:";
+    //     subtitulo.style.marginTop = "45px";
+    //     gameContainer.appendChild(subtitulo);
+
+    //     let playersContainer = document.createElement('div');
+    //     playersContainer.style.marginTop = '10px';
+    //     playersContainer.style.textAlign = 'center';
+    //     playersContainer.classList.add('players-status');
+
+    //     let jugadoresActivos = JSON.parse(localStorage.getItem('players'));
+
+    //     jugadoresActivos.forEach(jugador => {
+    //         let divPlayer = document.createElement('div');
+    //         divPlayer.classList.add('player');
+
+    //         let divName = document.createElement('div');
+    //         divName.classList.add('player-name');
+    //         divName.textContent = jugador;
+
+    //         let btnRendirse = document.createElement('button');
+    //         btnRendirse.textContent = "Rendirse 🚪";
+    //         btnRendirse.classList.add('giveup-btn');
+    //         btnRendirse.addEventListener('click', () => {
+    //             divPlayer.remove();
+    //             jugadoresActivos = jugadoresActivos.filter(j => j !== jugador);
+
+    //             if (jugadoresActivos.length === 1) {
+    //                 mostrarGanador(jugadoresActivos[0]);
+    //             }
+    //         });
+
+    //         divPlayer.appendChild(divName);
+    //         divPlayer.appendChild(btnRendirse);
+    //         playersContainer.appendChild(divPlayer);
+    //     });
+
+    //     gameContainer.appendChild(playersContainer);
+
+    //     function mostrarGanador(ganador) {
+    //         gameContainer.innerHTML = `
+    //         <h1 style="text-align:center; color:green;">🏆 ¡${ganador} es el ganador!</h1>
+    //     `;
+    //     }
+    // }
+
     function loadActorsMode() {
-        let selectActor = '';
-        const interval = setInterval(() => {
-            const estado = localStorage.getItem("estado");
-            if (estado === "listo") {
-                selectActor = JSON.parse(localStorage.getItem("currentActor"));
-                clearInterval(interval);
-                initActorMode(selectActor);
-            }
-        }, 200);
+    const gameContainer = document.querySelector(".game-container");
+    gameContainer.innerHTML = '';
+
+    // ---- UI base (siempre visible) ----
+    const titulo = document.createElement('h1');
+    titulo.style.textAlign = 'center';
+    titulo.textContent = "Modo Cadena de Actores 🎭";
+    gameContainer.appendChild(titulo);
+
+    const actorContainer = document.createElement('div');
+    actorContainer.style.textAlign = 'center';
+    actorContainer.style.marginTop = '20px';
+
+    const actorName = document.createElement('div');
+    actorName.classList.add('actors-display'); // caja del actor
+    actorContainer.appendChild(actorName);
+
+    // Spinner inicial
+    actorName.innerHTML = '';
+    actorName.appendChild(createSpinner());
+
+    const btnChangeActor = document.createElement('button');
+    btnChangeActor.textContent = "🔄 Cambiar Actor";
+    btnChangeActor.style.marginTop = '10px';
+    btnChangeActor.classList.add('change-btn');
+    btnChangeActor.disabled = true; // se habilita cuando haya actor
+    actorContainer.appendChild(document.createElement('br'));
+    actorContainer.appendChild(btnChangeActor);
+
+    gameContainer.appendChild(actorContainer);
+
+    const subtitulo = document.createElement('h3');
+    subtitulo.textContent = "Jugadores en la ronda:";
+    subtitulo.style.marginTop = "45px";
+    gameContainer.appendChild(subtitulo);
+
+    const playersContainer = document.createElement('div');
+    playersContainer.style.marginTop = '10px';
+    playersContainer.style.textAlign = 'center';
+    playersContainer.classList.add('players-status');
+
+    let jugadoresActivos = JSON.parse(localStorage.getItem('players')) || [];
+    if (!Array.isArray(jugadoresActivos)) {
+        // Si viniera como [{name:"..."}, ...] lo normalizamos a solo nombres
+        jugadoresActivos = jugadoresActivos.map(j => j?.name ?? j).filter(Boolean);
     }
 
-    function initActorMode(actor) {
-        const gameContainer = document.querySelector(".game-container");
-        gameContainer.innerHTML = '';
+    jugadoresActivos.forEach(jugador => {
+        const divPlayer = document.createElement('div');
+        divPlayer.classList.add('player');
 
-        let titulo = document.createElement('h1');
-        titulo.style.textAlign = 'center';
-        titulo.textContent = "Modo Cadena de Actores 🎭";
-        gameContainer.appendChild(titulo);
+        const divName = document.createElement('div');
+        divName.classList.add('player-name');
+        divName.textContent = jugador;
 
-        let actorContainer = document.createElement('div');
-        actorContainer.style.textAlign = 'center';
-        actorContainer.style.marginTop = '20px';
-        
-        let actorName = document.createElement('div');
-        //let selectActor = JSON.parse(localStorage.getItem('currentActor'));
-        
-        actorName.classList.add('actors-display');
-        actorName.textContent = actor.nombre;
-        actorContainer.appendChild(actorName);
-
-        let btnChangeActor = document.createElement('button');
-        btnChangeActor.textContent = "🔄 Cambiar Actor";
-        btnChangeActor.style.marginTop = '10px';
-        btnChangeActor.classList.add('change-btn');
-        btnChangeActor.addEventListener('click', () => {
-            obtenerActor('actores');
-            selectActor = JSON.parse(localStorage.getItem('currentActor'));
-            actorName.textContent = selectActor.nombre;
-        });
-        actorContainer.appendChild(document.createElement('br'));
-        actorContainer.appendChild(btnChangeActor);
-
-        gameContainer.appendChild(actorContainer);
-
-        let subtitulo = document.createElement('h3');
-        subtitulo.textContent = "Jugadores en la ronda:";
-        subtitulo.style.marginTop = "45px";
-        gameContainer.appendChild(subtitulo);
-
-        let playersContainer = document.createElement('div');
-        playersContainer.style.marginTop = '10px';
-        playersContainer.style.textAlign = 'center';
-        playersContainer.classList.add('players-status');
-
-        let jugadoresActivos = JSON.parse(localStorage.getItem('players'));
-
-        jugadoresActivos.forEach(jugador => {
-            let divPlayer = document.createElement('div');
-            divPlayer.classList.add('player');
-
-            let divName = document.createElement('div');
-            divName.classList.add('player-name');
-            divName.textContent = jugador;
-
-            let btnRendirse = document.createElement('button');
-            btnRendirse.textContent = "Rendirse 🚪";
-            btnRendirse.classList.add('giveup-btn');
-            btnRendirse.addEventListener('click', () => {
-                divPlayer.remove();
-                jugadoresActivos = jugadoresActivos.filter(j => j !== jugador);
-
-                if (jugadoresActivos.length === 1) {
-                    mostrarGanador(jugadoresActivos[0]);
-                }
-            });
-
-            divPlayer.appendChild(divName);
-            divPlayer.appendChild(btnRendirse);
-            playersContainer.appendChild(divPlayer);
+        const btnRendirse = document.createElement('button');
+        btnRendirse.textContent = "Rendirse 🚪";
+        btnRendirse.classList.add('giveup-btn');
+        btnRendirse.addEventListener('click', () => {
+            divPlayer.remove();
+            jugadoresActivos = jugadoresActivos.filter(j => j !== jugador);
+            if (jugadoresActivos.length === 1) {
+                mostrarGanador(jugadoresActivos[0]);
+            }
         });
 
-        gameContainer.appendChild(playersContainer);
+        divPlayer.appendChild(divName);
+        divPlayer.appendChild(btnRendirse);
+        playersContainer.appendChild(divPlayer);
+    });
 
-        function mostrarGanador(ganador) {
-            gameContainer.innerHTML = `
+    gameContainer.appendChild(playersContainer);
+
+    function mostrarGanador(ganador) {
+        gameContainer.innerHTML = `
             <h1 style="text-align:center; color:green;">🏆 ¡${ganador} es el ganador!</h1>
         `;
+    }
+
+    // ---- Lógica de carga/actualización del actor ----
+    // Si no está listo, lo pedimos (por si el setup no terminó)
+    const estado = localStorage.getItem("estado");
+    if (estado !== "listo") {
+        localStorage.setItem("estado", "cargando");
+        if (typeof obtenerActor === 'function') {
+            obtenerActor('actores'); // tu función que hace fetch y setea currentActor + estado="listo"
         }
     }
+
+    // Esperamos a que esté listo y lo mostramos
+    waitForActor(8000)
+        .then(actor => {
+            setActor(actorName, actor);
+            btnChangeActor.disabled = false;
+        })
+        .catch(() => {
+            actorName.textContent = "No se pudo cargar el actor. Toca 'Cambiar Actor' para reintentar.";
+            btnChangeActor.disabled = false;
+        });
+
+    // Cambiar actor (mismo patrón: spinner + esperar)
+    btnChangeActor.addEventListener('click', async () => {
+        btnChangeActor.disabled = true;
+        actorName.innerHTML = '';
+        actorName.appendChild(createSpinner());
+        localStorage.setItem("estado", "cargando");
+        if (typeof obtenerActor === 'function') obtenerActor('actores');
+
+        try {
+            const actor = await waitForActor(8000);
+            setActor(actorName, actor);
+        } catch (e) {
+            actorName.textContent = "Error al cargar actor. Intenta nuevamente.";
+        } finally {
+            btnChangeActor.disabled = false;
+        }
+    });
+}
+
+// Helpers
+function createSpinner() {
+    const sp = document.createElement('div');
+    sp.className = 'spinner';
+    return sp;
+}
+
+function waitForActor(timeoutMs = 8000) {
+    return new Promise((resolve, reject) => {
+        const started = Date.now();
+        const id = setInterval(() => {
+            if (localStorage.getItem("estado") === "listo") {
+                clearInterval(id);
+                try {
+                    const actor = JSON.parse(localStorage.getItem("currentActor"));
+                    return resolve(actor);
+                } catch (e) {
+                    return reject(e);
+                }
+            }
+            if (Date.now() - started > timeoutMs) {
+                clearInterval(id);
+                return reject(new Error("timeout"));
+            }
+        }, 150);
+    });
+}
+
+function setActor(el, actor) {
+    // Ajusta según la forma en que guardes el objeto actor
+    const nombre = actor?.nombre || actor?.name || "Actor desconocido";
+    el.textContent = nombre;
+}
+
 
 });
