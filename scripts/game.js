@@ -137,6 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadActorsMode() {
+        let selectActor = '';
+        const interval = setInterval(() => {
+            const estado = localStorage.getItem("estado");
+            if (estado === "listo") {
+                selectActor = JSON.parse(localStorage.getItem("currentActor"));
+                clearInterval(interval);
+                initActorMode(selectActor);
+            }
+        }, 200);
+    }
+
+    function initActorMode(actor) {
         const gameContainer = document.querySelector(".game-container");
         gameContainer.innerHTML = '';
 
@@ -150,10 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
         actorContainer.style.marginTop = '20px';
         
         let actorName = document.createElement('div');
-        let selectActor = JSON.parse(localStorage.getItem('currentActor'));
+        //let selectActor = JSON.parse(localStorage.getItem('currentActor'));
         
         actorName.classList.add('actors-display');
-        actorName.textContent = selectActor.nombre;
+        actorName.textContent = actor.nombre;
         actorContainer.appendChild(actorName);
 
         let btnChangeActor = document.createElement('button');
