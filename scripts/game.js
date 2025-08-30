@@ -289,8 +289,12 @@ document.addEventListener('DOMContentLoaded', () => {
         btnRendirse.classList.add('giveup-btn');
         btnRendirse.addEventListener('click', () => {
             divPlayer.remove();
-            obtenerActor("actores");
             jugadoresActivos = jugadoresActivos.filter(j => j !== jugador);
+
+            obtenerActor("actores");
+            let nuevoActor = JSON.parse(localStorage.getItem('currentActor'));
+            actorName.textContent = nuevoActor.nombre;
+
             if (jugadoresActivos.length === 1) {
                 mostrarGanador(jugadoresActivos[0]);
             }
