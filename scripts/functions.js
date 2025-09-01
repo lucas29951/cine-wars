@@ -78,6 +78,10 @@ function navigateTo(page) {
             localStorage.setItem('selectedMode', "actors");
             window.location.href = 'setup.html';
             break;
+        case 'triada':
+            localStorage.setItem('selectedMode', "triada");
+            window.location.href = 'setup.html';
+            break;
         case 'tematico':
             localStorage.setItem('selectedMode', "theme");
             window.location.href = 'setup.html';
@@ -110,6 +114,9 @@ function initializeGame(mode) {
             break;
         case 'actors':
             startDeathmatchMode();
+            break;
+        case 'triada':
+            startTriadaMode();
             break;
         case 'personalizada':
             startCustomMode();
@@ -159,6 +166,11 @@ function startSoloMode() {
     startTimer(60);
 }
 
+
+function startTriadaMode() {
+    console.log('Iniciando modo Tres pistas');
+    startTimer(60);
+}
 
 function startTimer(seconds) {
     const countdownElement = document.getElementById('time-countdown');
