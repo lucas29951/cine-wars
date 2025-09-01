@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case "actors":
                 handleActorsTypeChange();
                 break;
+            case "triada":
+                handleTriadaTypeChange();
+                break;
             case "custom":
                 console.log("Modo Personalizado");
                 break;
@@ -286,6 +289,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function handleTriadaTypeChange() {
+    const setupContainer = document.querySelector(".setup-container");
+    setupContainer.innerHTML = '';
+
+    let form = document.createElement('form');
+    form.id = 'setup-form';
+
+    let titulo = document.createElement('h1');
+    titulo.style.textAlign = 'center';
+    titulo.textContent = "Modo Tres Pistas 🔎🎬";
+    form.appendChild(titulo);
+
+    let descripcion = document.createElement('p');
+    descripcion.style.marginTop = '20px';
+    descripcion.style.textAlign = 'justify';
+    descripcion.style.fontSize = '18px';
+    descripcion.style.lineHeight = '1.6';
+    descripcion.innerHTML = `
+        En este modo de juego la <b>IA</b> seleccionará una <b>película aleatoria</b> 🎥 
+        y te dará hasta <b>tres pistas</b> para adivinarla: <br><br>
+        
+        1️⃣ <b>Año de estreno</b> 📅 <br>
+        2️⃣ <b>Género de la película</b> 🎭 <br>
+        3️⃣ <b>Actor(es)/Actriz(es) principal(es)</b> ⭐ <br><br>
+
+        🔹 Las pistas aparecerán <b>una por una</b>, en ese orden.  
+        🔹 Si adivinas antes de que se revelen todas, ¡ganarás más puntos! 🏆 <br><br>
+
+        ⚡ ¡Pon a prueba tu conocimiento cinéfilo y reta a tus amigos a ver quién adivina primero!
+    `;
+    form.appendChild(descripcion);
+
+    let boton = document.createElement('button');
+    boton.type = 'button';
+    boton.id = 'start-game-btn';
+    boton.textContent = "Iniciar Partida";
+    boton.style.margin = '20px auto 40px';
+
+    form.appendChild(boton);
+
+    setupContainer.appendChild(form);
+
+    // Evento que dispara el inicio del juego
+    const btnStart = document.getElementById('start-game-btn');
+    btnStart.addEventListener('click', startGameTriada);
+}
+
+
     function startGame() {
         const gameMode = localStorage.getItem('selectedMode');
         switch (gameMode) {
@@ -294,6 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'rulete':
                 startGameRulete();
+                break;
+            case 'triada':
+                startGameTriada();
                 break;
         }
     }
@@ -327,5 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startGameActors() {
         window.location.href = 'status.html';
+    }
+
+    function startGameTriada() {
+        window.location.href = 'game.html';
     }
 });
