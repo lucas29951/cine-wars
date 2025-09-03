@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'actors':
             loadActorsMode();
             break;
+        case 'triada':
+            initTresPistasMode();
+            break;
     }
 
     function loadClassicMode() {
@@ -135,98 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gameContainer.appendChild(ruleteContainer);
     }
-
-    // function loadActorsMode() {
-    //     let selectActor = '';
-    //     const interval = setInterval(() => {
-    //         const estado = localStorage.getItem("estado");
-    //         if (estado === "listo") {
-    //             selectActor = JSON.parse(localStorage.getItem("currentActor"));
-    //             clearInterval(interval);
-    //             initActorMode(selectActor);
-    //         }
-    //     }, 200);
-    // }
-
-    // function initActorMode(actor) {
-    //     const gameContainer = document.querySelector(".game-container");
-    //     gameContainer.innerHTML = '';
-
-    //     let titulo = document.createElement('h1');
-    //     titulo.style.textAlign = 'center';
-    //     titulo.textContent = "Modo Cadena de Actores 🎭";
-    //     gameContainer.appendChild(titulo);
-
-    //     let actorContainer = document.createElement('div');
-    //     actorContainer.style.textAlign = 'center';
-    //     actorContainer.style.marginTop = '20px';
-        
-    //     let actorName = document.createElement('div');
-    //     //let selectActor = JSON.parse(localStorage.getItem('currentActor'));
-        
-    //     actorName.classList.add('actors-display');
-    //     actorName.textContent = actor.nombre;
-    //     actorContainer.appendChild(actorName);
-
-    //     let btnChangeActor = document.createElement('button');
-    //     btnChangeActor.textContent = "🔄 Cambiar Actor";
-    //     btnChangeActor.style.marginTop = '10px';
-    //     btnChangeActor.classList.add('change-btn');
-    //     btnChangeActor.addEventListener('click', () => {
-    //         obtenerActor('actores');
-    //         selectActor = JSON.parse(localStorage.getItem('currentActor'));
-    //         actorName.textContent = selectActor.nombre;
-    //     });
-    //     actorContainer.appendChild(document.createElement('br'));
-    //     actorContainer.appendChild(btnChangeActor);
-
-    //     gameContainer.appendChild(actorContainer);
-
-    //     let subtitulo = document.createElement('h3');
-    //     subtitulo.textContent = "Jugadores en la ronda:";
-    //     subtitulo.style.marginTop = "45px";
-    //     gameContainer.appendChild(subtitulo);
-
-    //     let playersContainer = document.createElement('div');
-    //     playersContainer.style.marginTop = '10px';
-    //     playersContainer.style.textAlign = 'center';
-    //     playersContainer.classList.add('players-status');
-
-    //     let jugadoresActivos = JSON.parse(localStorage.getItem('players'));
-
-    //     jugadoresActivos.forEach(jugador => {
-    //         let divPlayer = document.createElement('div');
-    //         divPlayer.classList.add('player');
-
-    //         let divName = document.createElement('div');
-    //         divName.classList.add('player-name');
-    //         divName.textContent = jugador;
-
-    //         let btnRendirse = document.createElement('button');
-    //         btnRendirse.textContent = "Rendirse 🚪";
-    //         btnRendirse.classList.add('giveup-btn');
-    //         btnRendirse.addEventListener('click', () => {
-    //             divPlayer.remove();
-    //             jugadoresActivos = jugadoresActivos.filter(j => j !== jugador);
-
-    //             if (jugadoresActivos.length === 1) {
-    //                 mostrarGanador(jugadoresActivos[0]);
-    //             }
-    //         });
-
-    //         divPlayer.appendChild(divName);
-    //         divPlayer.appendChild(btnRendirse);
-    //         playersContainer.appendChild(divPlayer);
-    //     });
-
-    //     gameContainer.appendChild(playersContainer);
-
-    //     function mostrarGanador(ganador) {
-    //         gameContainer.innerHTML = `
-    //         <h1 style="text-align:center; color:green;">🏆 ¡${ganador} es el ganador!</h1>
-    //     `;
-    //     }
-    // }
 
     function loadActorsMode() {
     const gameContainer = document.querySelector(".game-container");
@@ -385,6 +296,125 @@ function setActor(el, actor) {
     // Ajusta según la forma en que guardes el objeto actor
     const nombre = actor?.nombre || actor?.name || "Actor desconocido";
     el.textContent = nombre;
+}
+
+// === MODO TRES PISTAS ===
+async function initTresPistasMode() {
+    const gameContainer = document.querySelector(".game-container");
+    gameContainer.innerHTML = "";
+
+    let titulo = document.createElement("h1");
+    titulo.style.textAlign = "center";
+    titulo.textContent = "🎬 Modo Tres Pistas";
+    gameContainer.appendChild(titulo);
+
+    let instrucciones = document.createElement("p");
+    instrucciones.style.textAlign = "center";
+    instrucciones.textContent = "La IA ha elegido una película. ¡Descúbrela con las 3 pistas!";
+    gameContainer.appendChild(instrucciones);
+
+    // Contenedor de pistas
+    let pistasContainer = document.createElement("div");
+    pistasContainer.classList.add("pistas-container");
+    pistasContainer.style.textAlign = "center";
+    pistasContainer.style.marginTop = "20px";
+    gameContainer.appendChild(pistasContainer);
+
+    // Input para adivinar
+    let inputGuess = document.createElement("input");
+    inputGuess.type = "text";
+    inputGuess.placeholder = "Escribe tu respuesta...";
+    inputGuess.classList.add("guess-input");
+    inputGuess.style.marginTop = "20px";
+
+    let btnGuess = document.createElement("button");
+    btnGuess.textContent = "Adivinar 🎯";
+    btnGuess.classList.add("guess-btn");
+
+    gameContainer.appendChild(inputGuess);
+    gameContainer.appendChild(btnGuess);
+
+    // Obtenemos la película y pistas desde Cohere
+    const data = await obtenerPeliculaYPistas();
+    const peliculaCorrecta = data.pelicula;
+    const pistas = data.pistas; // array con 3 pistas en orden
+
+    let pistaIndex = 0;
+
+    // Mostrar la primera pista
+    mostrarPista();
+
+    function mostrarPista() {
+        if (pistaIndex < pistas.length) {
+            let pistaDiv = document.createElement("div");
+            pistaDiv.classList.add("pista");
+            pistaDiv.textContent = `Pista ${pistaIndex + 1}: ${pistas[pistaIndex]}`;
+            pistasContainer.appendChild(pistaDiv);
+            pistaIndex++;
+        }
+    }
+
+    btnGuess.addEventListener("click", () => {
+        let respuesta = inputGuess.value.trim().toLowerCase();
+        if (!respuesta) return;
+
+        if (respuesta.includes(peliculaCorrecta.toLowerCase())) {
+            gameContainer.innerHTML = `
+                <h1 style="text-align:center; color:green;">🎉 ¡Correcto! La película era: ${peliculaCorrecta}</h1>
+            `;
+        } else {
+            inputGuess.value = "";
+            if (pistaIndex < pistas.length) {
+                mostrarPista();
+            } else {
+                gameContainer.innerHTML = `
+                    <h1 style="text-align:center; color:red;">❌ Has perdido. La película era: ${peliculaCorrecta}</h1>
+                `;
+            }
+        }
+    });
+}
+
+// === FUNCIÓN PARA USAR LA API DE COHERE ===
+async function obtenerPeliculaYPistas() {
+    try {
+        const response = await fetch("https://api.cohere.ai/v1/generate", {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer XXXX-XXXX", // <-- Aquí tu API KEY
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                model: "command-r-plus", // modelo de Cohere
+                prompt: `Elige una película conocida y proporciona en JSON el siguiente formato:
+{
+  "pelicula": "Nombre de la película",
+  "pistas": [
+    "Año de estreno",
+    "Género de la película",
+    "Nombre de uno o dos actores principales"
+  ]
+}`,
+                max_tokens: 100,
+                temperature: 0.8
+            })
+        });
+
+        const data = await response.json();
+        console.log("IA DATA: ", data);
+        const texto = data.generations[0].text.trim();
+
+        // Intentamos parsear el JSON que devolvió la IA
+        const parsed = JSON.parse(texto);
+        return parsed;
+
+    } catch (error) {
+        console.error("Error al obtener película de Cohere:", error);
+        return {
+            pelicula: "Inception",
+            pistas: ["2010", "Ciencia Ficción", "Leonardo DiCaprio, Joseph Gordon-Levitt"]
+        };
+    }
 }
 
 
